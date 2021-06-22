@@ -20,6 +20,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--dark-grey);
 }
 
+h3 {
+  font: 400 24px/32px "Poppins", "Helvetica Neue", sans-serif;
+}
+
 header nav {
   color: var(--dark-grey);
   font: 500 14px/20px "Poppins", "Helvetica Neue", sans-serif;
