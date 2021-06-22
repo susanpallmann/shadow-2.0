@@ -10,6 +10,8 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
   color: var(--almost-black);
 }
