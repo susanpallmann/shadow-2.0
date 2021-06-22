@@ -106,3 +106,9 @@ background-color: var(--lighter-grey);
 color: var(--darker-grey);
 text-decoration: none;
 }
+
+header nav ul li a.selected:hover,
+header nav ul li a.selected:focus,
+header nav ul li a.selected:active {
+background-color: var(--light-blue);
+}
