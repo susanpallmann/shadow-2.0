@@ -29,9 +29,15 @@ a:focus {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  color: var(--dark-grey);
+  color: var(--almost-black);
+}
+
+h1 {
+  font: 400 36px/44px "Poppins", "Helvetica Neue", sans-serif;
+}
+
+h2 {
+  font: 400 32px/40px "Poppins", "Helvetica Neue", sans-serif;
 }
 
 h3 {
