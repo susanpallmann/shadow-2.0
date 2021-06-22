@@ -8,16 +8,16 @@
   --white: #ffffff;
 }
 
-
-
 body {
-  font-family: "Open Sans", sans-serif;
+  font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: var(--dark-grey);
 }
+
 nav {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
