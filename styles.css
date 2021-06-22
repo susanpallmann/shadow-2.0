@@ -88,6 +88,7 @@ header nav ul li a {
   align-items: center;
   box-sizing: border-box;
   position: relative;
+  color: var(--dark-grey);
 }
 
 header nav ul li a.selected:after {
