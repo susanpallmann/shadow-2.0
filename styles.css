@@ -102,13 +102,14 @@ header nav ul li a.selected:after {
 header nav ul li a:hover,
 header nav ul li a:focus,
 header nav ul li a:active {
-background-color: var(--lighter-grey);
-color: var(--darker-grey);
-text-decoration: none;
+  background-color: var(--lighter-grey);
+  color: var(--darker-grey);
+  text-decoration: none;
 }
 
 header nav ul li a.selected:hover,
 header nav ul li a.selected:focus,
 header nav ul li a.selected:active {
-background-color: var(--light-blue);
+  color: var(--dark-blue);
+  background-color: var(--light-blue);
 }
