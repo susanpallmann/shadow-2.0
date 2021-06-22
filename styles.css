@@ -50,6 +50,9 @@ h3 {
 #title h1 {
   font: 500 24px/32px "Poppins", "Helvetica Neue", sans-serif;
   margin: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 header nav {
