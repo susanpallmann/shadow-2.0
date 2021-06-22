@@ -91,6 +91,10 @@ header nav ul li a {
   color: var(--dark-grey);
 }
 
+header nav ul li a.selected {
+  color: var(--blue);
+}
+
 header nav ul li a.selected:after {
   content: "";
   height: 1px;
