@@ -82,3 +82,11 @@ header nav ul li a {
   vertical-align: middle;
   align-items: center;
 }
+
+header nav ul li a.selected:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  top: 100%;
+  background-color: var(--blue);
+}
