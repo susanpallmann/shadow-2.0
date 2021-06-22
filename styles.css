@@ -73,7 +73,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-  padding: 0 24px;
+  padding: 8px 24px;
   height: 100%;
   display: flex;
   align-content: center;
@@ -89,4 +89,12 @@ header nav ul li a.selected:after {
   width: 100%;
   top: 100%;
   background-color: var(--blue);
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus,
+header nav ul li a:active {
+background-color: var(--lighter-grey);
+color: var(--darker-grey);
+text-decoration: none;
 }
