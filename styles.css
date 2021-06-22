@@ -84,6 +84,7 @@ header nav ul li a {
   vertical-align: middle;
   align-items: center;
   box-sizing: border-box;
+  position: relative;
 }
 
 header nav ul li a.selected:after {
@@ -92,6 +93,10 @@ header nav ul li a.selected:after {
   width: 100%;
   top: 100%;
   background-color: var(--blue);
+  height: 1.5px;
+  top: calc(100% - 0.5px);
+  position: absolute;
+  left: 0;
 }
 
 header nav ul li a:hover,
