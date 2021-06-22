@@ -1,2 +1,2 @@
-# everyday-react
-Another look at the EveryDay mood log app concept, but this time with React JS
+# shadow
+A brief dev. sprint aiming to create a basic web app for tracking my own goals/health behaviors daily.
