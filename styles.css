@@ -20,7 +20,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--dark-grey);
 }
 
-nav {
+header nav {
   color: var(--dark-grey);
   font: 500 14px/20px "Poppins", "Helvetica Neue", sans-serif;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+  header nav ul li {
+  display: inline-block;
 }
