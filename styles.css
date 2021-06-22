@@ -4,12 +4,14 @@
   --light-blue: rgba(26,115,232,.04);
   --dark-grey: #5f6368;
   --darker-grey: #202124;
+  --almost-black: #3c4043;
   --light-grey: rgba(32,33,36,.04);
   --white: #ffffff;
 }
 
 body {
   font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
+  color: var(--almost-black);
 }
 
 h1, h2, h3, h4, h5, h6 {
