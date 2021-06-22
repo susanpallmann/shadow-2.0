@@ -1,11 +1,23 @@
+:root {
+  --blue: #1a73e8;
+  --dark-blue: #174ea6;
+  --light-blue: rgba(26,115,232,.04);
+  --dark-grey: #5f6368;
+  --white: #ffffff;
+}
+
+
+
 body {
   font-family: "Open Sans", sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  color: var(--dark-grey);
 }
 nav {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  color: var(--dark-grey);
 }
