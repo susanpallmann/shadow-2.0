@@ -50,6 +50,19 @@
     <!-- Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
+    <!-- Dynamically Loaded Header-->
+    <script type="text/javascript">
+      $(function(){
+        $("header").load("/header.html", 
+          function() {
+            //$("#horiz-portfolio").addClass("selected");
+            //$("#vert-portfolio").addClass("selected")
+          }
+        );
+        //$("footer").load("/footer.html");
+      });
+    </script>
+    
     <!-- Scripts -->
     <script src="vanilla.js"></script>
     <script src="discount-bootstrap.js"></script>
