@@ -9,7 +9,7 @@
 }
 
 body {
-  font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+  font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,7 +19,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
   color: var(--dark-grey);
+  font: 500 14px/20px "Poppins", "Helvetica Neue", sans-serif;
 }
