@@ -56,7 +56,6 @@ header nav {
   color: var(--dark-grey);
   font: 500 14px/20px "Poppins", "Helvetica Neue", sans-serif;
   display: flex;
-  padding: 8px;
   background-color: #fff;
   border-bottom: var(--light-grey) 1px solid;
 }
