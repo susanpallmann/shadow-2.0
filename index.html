@@ -25,6 +25,17 @@
     <!-- Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
+    <!-- Dynamically Loaded HTML-->
+    <script type="text/javascript">
+      $(function(){
+        $("header").load("/header.html", 
+          function() {
+          }
+        );
+        //$("footer").load("/footer.html");
+      });
+    </script>
+    
     <!-- Scripts -->
     <script src="vanilla.js"></script>
     <script src="discount-bootstrap.js"></script>
