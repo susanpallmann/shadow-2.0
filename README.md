@@ -1,2 +1,2 @@
 # unnamed-game
-Description to come ¯\_(ツ)_/¯
+Description to come ¯\\_(ツ)_/¯
