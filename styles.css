@@ -1,3 +1,10 @@
+/* Game Specific */
+#canvas {
+  width: 100%;
+  height: 100vh;
+  background-color: #eeeeee;
+}
+
 :root {
   --blue: #1a73e8;
   --dark-blue: #174ea6;
