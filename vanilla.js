@@ -106,22 +106,22 @@ $(document).ready(function() {
 
         gravity: {
             x: 0,
-            y: 0.3
+            y: 0.3*4
         },
 
         /* Velocity limits */
 
         vel_limit: {
-            x: 2,
-            y: 16
+            x: 2*4,
+            y: 16*4
         },
 
         /* Movement speed when the key is pressed */
 
         movement_speed: {
-            jump: 6,
-            left: 0.3,
-            right: 0.3
+            jump: 6*4,
+            left: 0.3*4,
+            right: 0.3*4
         },
 
         /* The coordinates at which the player spawns and the colour of the player */
