@@ -5,6 +5,7 @@
   background-color: #eeeeee;
   display: block;
   border: 1px solid #000;
+  box-sizing: border-box;
 }
 
 #character {
