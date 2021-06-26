@@ -2,13 +2,11 @@ $(document).ready(function() {
     
     let charWidth = $('#character').width();
     let charHeight = $('#character').height();
-    let childPos = $('#character').offset();
-    let parentPos = $('#character').parent().offset();
+    let childPos = $('#character').getBoundingClientRect();
+    let parentPos = $('#character').parent().getBoundingClientRect();
     let childOffset = {
-        //top: (childPos.top + charHeight/2 - parentPos.top)/$('#game').height()*2,
-        //left: (childPos.left + charWidth/2 - parentPos.left)/$('#game').width()*2
-        top: (childPos.top + charHeight/2)/$('#game').height()*2,
-        left: (childPos.left + charWidth/2)/$('#game').width()*2
+        top: (childPos.top + charHeight/2 - parentPos.top)/$('#game').height()*2,
+        left: (childPos.left + charWidth/2 - parentPos.left)/$('#game').width()*2
     }
     console.log(childPos.top);
     console.log(childPos.left);
