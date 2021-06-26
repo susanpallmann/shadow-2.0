@@ -6,5 +6,11 @@ $(document).ready(function() {
         top: childPos.top - parentPos.top,
         left: childPos.left - parentPos.left
     }
+    console.log(childOffset.top);
+    console.log(childOffset.left);
 
+    function updateScroll(positionLeft, positionTop) {
+        
+    }
+    
 });
