@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     var map = {
 
-        tile_size: 16,
+        tile_size: 64,
 
         /*
 
@@ -155,8 +155,8 @@ $(document).ready(function() {
         this.jump_switch    = 0;
 
         this.viewport = {
-            x: ($(window).width() - 2)/8,
-            y: ($(window).height() - 2)/8
+            x: ($(window).width() - 2)/2,
+            y: ($(window).height() - 2)/2
         };
 
         this.camera = {
