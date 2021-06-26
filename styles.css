@@ -5,6 +5,13 @@
   background-color: #eeeeee;
 }
 
+#character {
+  height: 64px; 
+  width: 30px;
+  background-image: url('/character.gif');
+}
+
+/* Normal Styles */
 :root {
   --blue: #1a73e8;
   --dark-blue: #174ea6;
