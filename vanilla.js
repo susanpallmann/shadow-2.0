@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     var map = {
 
-        tile_size: 64,
+        tile_size: 18,
 
         /*
 
@@ -255,7 +255,7 @@ $(document).ready(function() {
 
         this.current_map.background = map.background || '#333';
         this.current_map.gravity = map.gravity || {x: 0, y: 0.3};
-        this.tile_size = map.tile_size || 16;
+        this.tile_size = map.tile_size || 64;
 
         var _this = this;
 
