@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     var map = {
 
-        tile_size: 18,
+        tile_size: 64,
 
         /*
 
