@@ -8,7 +8,7 @@
 #character {
   height: 64px; 
   width: 30px;
-  background-image: url('/character.gif');
+  background-image: url('character.gif');
 }
 
 /* Normal Styles */
