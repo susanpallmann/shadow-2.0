@@ -9,6 +9,8 @@
   height: 64px; 
   width: 30px;
   background-image: url('character.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Normal Styles */
