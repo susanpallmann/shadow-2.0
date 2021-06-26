@@ -606,8 +606,8 @@ $(document).ready(function() {
     var canvas = document.getElementById('canvas'),
         ctx = canvas.getContext('2d');
 
-    canvas.width = $(window).width(),
-    canvas.height = $(window).height();
+    canvas.width = $(window).width() - 2,
+    canvas.height = $(window).height() - 2;
 
     var game = new Clarity();
         game.set_viewport(canvas.width, canvas.height);
