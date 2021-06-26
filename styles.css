@@ -6,10 +6,10 @@
   display: block;
   border: 1px solid #000;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #game {
-  overflow: hidden;
   position: relative;
   
 }
