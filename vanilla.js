@@ -155,8 +155,8 @@ $(document).ready(function() {
         this.jump_switch    = 0;
 
         this.viewport = {
-            x: ($(window).width())/2,
-            y: ($(window).height())/2
+            x: ($(window).width() - 2)/8,
+            y: ($(window).height() - 2)/8
         };
 
         this.camera = {
