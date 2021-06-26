@@ -112,8 +112,8 @@ $(document).ready(function() {
         /* Velocity limits */
 
         vel_limit: {
-            x: 2*4,
-            y: 16*4
+            x: 2,
+            y: 16
         },
 
         /* Movement speed when the key is pressed */
