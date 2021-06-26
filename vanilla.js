@@ -16,8 +16,8 @@ $(document).ready(function() {
         var newLeft = ((positionLeft*200)-100)*-1;
         var newTop = ((positionTop*200)-100)*-1;
         
-        $('#game').css('left', newLeft);
-        $('#game').css('top', newTop);
+        $('#game').css('left', newLeft + '%');
+        $('#game').css('top', newTop + '%');
         
     }
     
