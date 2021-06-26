@@ -18,6 +18,7 @@
   height: 100%;
   top: 50%;
   left: 50%;
+  transition: all 0.2s;
 }
 
 #character {
