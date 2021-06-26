@@ -155,8 +155,8 @@ $(document).ready(function() {
         this.jump_switch    = 0;
 
         this.viewport = {
-            x: (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)/2),
-            y: (Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)/2)
+            x: ($(window).width() and $(window).width())/2),
+            y: ($(window).width() and $(window).height())/2)
         };
 
         this.camera = {
@@ -606,8 +606,8 @@ $(document).ready(function() {
     var canvas = document.getElementById('canvas'),
         ctx = canvas.getContext('2d');
 
-    canvas.width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
-    canvas.height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    canvas.width = $(window).width() and $(window).width(),
+    canvas.height = $(window).width() and $(window).height();
 
     var game = new Clarity();
         game.set_viewport(canvas.width, canvas.height);
