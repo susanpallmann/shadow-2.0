@@ -4,6 +4,7 @@
   height: 100vh;
   background-color: #eeeeee;
   display: block;
+  border: 1px solid #000;
 }
 
 #character {
@@ -21,13 +22,6 @@
 
 body {
   background: #f2f2f2;
-}
-
-canvas {
-  display:block;
-  margin: 40px auto 20px;
-  border: 1px solid #333;
-  box-shadow: 0 0 16px 2px rgba(0,0,0,0.8);
 }
 
 p, a {
