@@ -1,79 +1,92 @@
 $(document).ready(function() {
     
-    // Below focuses view on where character currently is by adjusting the position of the game element within the canvas element
-    // TODO: Right now this depends on the #game element being twice the size of the canvas and aligning to the same aspect ratio
-    //       We're going to need to refactor this to fit any level size since it's not decided yet how that will look.
-    function updateScroll() {
-        
-        // Get height/width of player (#character)
-        let charWidth = $('#character')[0].getBoundingClientRect().width;
-        let charHeight = $('#character')[0].getBoundingClientRect().height;
-        
-        // Get position of player
-        let childPos = $('#character').offset();
-        
-        // Get position of game element (#game)
-        let parentPos = $('#character').parent().offset();
-        
-        // Math to work out precisely how far the center of the player is from the top-left corner of the #game element
-        // End result is a fraction (should be less than 1 and more than 0)
-        let childOffset = {
-            top: (childPos.top + charHeight/2 - parentPos.top)/$('#game')[0].getBoundingClientRect().height,
-            left: (childPos.left + charWidth/2 - parentPos.left)/$('#game')[0].getBoundingClientRect().width
+    // Okay fine. We tried doing this from scratch but we don't have the background info we need to do it well.
+    // This tutorial guy can code circles around me (and does), so I'm going to take his word for it.
+    // The single condition is I must comment his code and be 100% sure I understand everything I am doing.
+    // I do not use code I don't understand. Doing that always breaks everything.
+    // So without further ado, the tutorial from this URL: https://eloquentjavascript.net/16_game.html
+    
+    // Example level
+    // Levels must be fully rectangular for this to work (all lines must be the same length)
+    // . = empty
+    // # = wall
+    // + = lava
+    // @ = character
+    // o = coin
+    // = = sideways moving lava
+    // v = dripping lava
+    // | = up/down moving lava
+    let simpleLevelPlan = `
+        ......................
+        ..#................#..
+        ..#..............=.#..
+        ..#.........o.o....#..
+        ..#.@......#####...#..
+        ..#####............#..
+        ......#++++++++++++#..
+        ......##############..
+        ......................`;
+    
+    // Stores a level object, using a string like the above as the argument to be read
+    class Level {
+        constructor(plan) {
+            
+            // Trims whitespace before/after plan, then splits on new line (\n) to create rows
+            // Maps these rows to create arrays of characters
+            // Rows then holds an array of arrays of characters; it is all of the rows
+            let rows = plan.trim().split('\n').map(l => [...l]);
+            
+            // Calculate height of the map by determining how many individual row arrays were stored in the rows variable
+            this.height = rows.length;
+            
+            // Calculate width of the map by getting the length of one of those row arrays
+            this.width = rows[0].length;
+            
+            // Initializing an array for actors (non-background items)
+            this.startActors = [];
+            
+            // Next we're separating our moving, non-background items (actors) from the background
+            // TODO: This code refers to some things that aren't implemented yet, revisit later to properly comment
+            this.rows = rows.map((row, y) => {
+                return row.map((ch, x) => {
+                    
+                    // TODO: I think this runs a function to determine the type of background block the stored character is
+                    // It should return the name if it is a background block, and maybe otherwise returns null?
+                    let type = levelChars[ch];
+                    
+                    // TODO: If the type of the name returned above is a string, we put its name in the array we're mapping to
+                    if (typeof type == "string") return type;
+                    
+                    // TODO: If the type was not a string, we're assuming it's an actor and constructing the actor to push to our 
+                    //       startActors array
+                    // TODO: And since we know an actor is in that position, we determine the block it occupies to be empty and 
+                    //       put that in the mapping array
+                    this.startActors.push(
+                        type.create(new Vec(x, y), ch));
+                    return "empty";
+                });
+            });
+            
         }
-        
-        // Math to translate fraction from previous step to a scale of 100 to -100 for use translating #game element
-        // -100 range is further right/down, 100 is left/up (weird, but it works, so)
-        var newLeft = ((childOffset.left*200)-100)*-1;
-        var newTop = ((childOffset.top*200)-100)*-1;
-        
-        // Updates element CSS to reflect the new position, centering the player within the #canvas viewport
-        $('#game').css('left', newLeft + '%');
-        $('#game').css('top', newTop + '%');
-        
     }
     
-    // Calling on initial load
-    updateScroll();
-    
-    // Calling again when the screen is resized
-    $(window).resize(function() {
-        updateScroll();
-    });
-    
-    
-    
-    
-    // Below is an attempt at movement
-    
-    let playerXSpeed = 7;
-    let gravity = 30;
-    let jumpSpeed = 17;
-    
-    // When player presses "D" key
-    // Check if this movement would cause a collision
-    // If not, step
-
-    $(document).bind('keydown', function(e) {
-        if (e.keyCode == 68) {
-            // press the letter D
-            let currentLeft = $('#character').css('left');
-            currentLeft = parseInt(currentLeft, 10);
-            $('#character').css('left', (currentLeft + 20) + 'px');
-            setTimeout(function() { 
-                updateScroll(); }
-                       , 200);
-
-        } else if (e.keyCode == 65) {
-            //press the letter A
-            let currentLeft = $('#character').css('left');
-            currentLeft = parseInt(currentLeft, 10);
-            $('#character').css('left', (currentLeft - 20) + 'px');
-            setTimeout(function() { 
-                updateScroll(); 
-            }, 200);
+    // Stores an object to track the state of the game
+    // Given a Level object (from the above class), gets actors list from this object's property
+    // Status is starting as "playing", and will switch to "lost" or "won" when the game has ended
+    class State {
+        constructor(level, actors, status) {
+            this.level = level;
+            this.actors = actors;
+            this.status = status;
         }
-        return false;
-    });
-
+        
+        static start(level) {
+            return new State(level, level.startActors, "playing");
+        }
+        
+        get player() {
+            return this.actors.find(a => a.type == "player");
+        }
+    }
+    
 });
