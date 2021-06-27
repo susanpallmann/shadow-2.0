@@ -60,7 +60,9 @@ $(document).ready(function() {
             console.log('D pressed');
             // press the letter D
             let currentLeft = $('#character').css('left');
+            console.log(currentLeft);
             $('#character').css('left', (currentLeft + 20) + 'px');
+            console.log((currentLeft + 20) + 'px');
             //updateScroll();
 
         } else if (e.keyCode == 65) {
