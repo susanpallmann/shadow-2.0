@@ -21,6 +21,6 @@ $(document).ready(function() {
         
     }
     
-    updateScroll(childOffset.top, childOffset.left);
+    updateScroll(childOffset.left, childOffset.top);
     
 });
