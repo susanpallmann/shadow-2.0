@@ -160,6 +160,7 @@ $(document).ready(function() {
             // Maps these rows to create arrays of characters
             // Rows then holds an array of arrays of characters; it is all of the rows
             let rows = plan.trim().split("\n").map(l => [...l]);
+            console.log(rows);
             
             // Calculate height of the map by determining how many individual row arrays were stored in the rows variable
             this.height = rows.length;
