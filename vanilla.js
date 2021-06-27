@@ -215,10 +215,6 @@
         }
     }
     
-    // How we create a Level instance (this doesn't display anything, and currently time/motion don't exist)
-    let simpleLevel = new Level(simpleLevelPlan);
-    console.log(`${simpleLevel.width} by ${simpleLevel.height}`);
-    
     // Helper function to create element with some given parameters
     // TODO: Rename this, don't like "elt"
     function elt(name, attrs, ...children) {
