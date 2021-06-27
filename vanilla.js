@@ -54,12 +54,15 @@ $(document).ready(function() {
     // Check if this movement would cause a collision
     // If not, step
     $(document).bind('keydown', function(e) {
+        console.log('thisranB1');
         if (e.keyCode == 68) {
+            console.log('thisranB2');
             // press the letter D
             let currentLeft = $('#character').css('left');
             $('#character').css('left', (currentLeft + 20) + 'px');
 
         } else if (e.keyCode == 65) {
+            console.log('thisranB3');
             //press the letter A
             let currentLeft = $('#character').css('left');
             $('#character').css('left', (currentLeft - 20) + 'px');
@@ -70,12 +73,15 @@ $(document).ready(function() {
 });
 
 $(document).bind('keydown', function(e) {
+    console.log('thisranA1');
     if (e.keyCode == 68) {
+        console.log('thisranA2');
         // press the letter D
         let currentLeft = $('#character').css('left');
         $('#character').css('left', (currentLeft + 20) + 'px');
 
     } else if (e.keyCode == 65) {
+        console.log('thisranA3');
         //press the letter A
         let currentLeft = $('#character').css('left');
         $('#character').css('left', (currentLeft - 20) + 'px');
