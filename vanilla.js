@@ -161,7 +161,6 @@ $(document).ready(function() {
             // Maps these rows to create arrays of characters
             // Rows then holds an array of arrays of characters; it is all of the rows
             let rows = plan.trim().split("\n").map(l => [...l]);
-            console.log(rows);
             
             // Calculate height of the map by determining how many individual row arrays were stored in the rows variable
             this.height = rows.length;
@@ -188,7 +187,6 @@ $(document).ready(function() {
                     //       startActors array
                     // TODO: And since we know an actor is in that position, we determine the block it occupies to be empty and 
                     //       put that in the mapping array
-                    console.log(ch);
                     this.startActors.push(
                         type.create(new Vec(x, y), ch));
                     return "empty";
@@ -271,13 +269,18 @@ $(document).ready(function() {
     
     // Creating DOM elements for each actor in the game
     function drawActors(actors) {
-        //TODO: elt is here too
+        
+        // TODO: elt is here too
+        // Creates elements based on each actor's object properties, multiplied by game scale
+        // Elements have their actor types as classes in addition to an "actor" class
         return elt("div", {}, ...actors.map(actor => {
             let rect = elt("div", {class: `actor ${actor.type}`});
             rect.style.width = `${actor.size.x * scale}px`;
             rect.style.height = `${actor.size.y * scale}px`;
             rect.style.left = `${actor.pos.x * scale}px`;
             rect.style.top = `${actor.pos.y * scale}px`;
+            
+            // Returns DOM element for each actor
             return rect;
         }));
     }
