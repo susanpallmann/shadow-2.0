@@ -8,6 +8,7 @@ $(document).ready(function() {
     
     // Example level
     // Levels must be fully rectangular for this to work (all lines must be the same length)
+    // DO NOT indent this in GitHub's editor, it counts the spaces when the map is read lol
     // . = empty
     // # = wall
     // + = lava
@@ -17,15 +18,15 @@ $(document).ready(function() {
     // v = dripping lava
     // | = up/down moving lava
     let simpleLevelPlan = `
-        ......................
-        ..#................#..
-        ..#..............=.#..
-        ..#.........o.o....#..
-        ..#.@......#####...#..
-        ..#####............#..
-        ......#++++++++++++#..
-        ......##############..
-        ......................`;
+......................
+..#................#..
+..#..............=.#..
+..#.........o.o....#..
+..#.@......#####...#..
+..#####............#..
+......#++++++++++++#..
+......##############..
+......................`;
     
     // Class to store 2-dimensional values, position and size of actors
     class Vec {
