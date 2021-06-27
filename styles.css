@@ -46,7 +46,8 @@
 .player {
   background-image: url('character.gif');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: 50% 50%;
 }
 
 
