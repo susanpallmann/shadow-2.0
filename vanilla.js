@@ -5,8 +5,8 @@ $(document).ready(function() {
     let childPos = $('#character').offset();
     let parentPos = $('#character').parent().offset();
     let childOffset = {
-        top: (childPos.top + charHeight/4 - parentPos.top)/$('#game')[0].getBoundingClientRect().height,
-        left: (childPos.left + charWidth/4 - parentPos.left)/$('#game')[0].getBoundingClientRect().width
+        top: (childPos.top + charHeight/2 - parentPos.top)/$('#game')[0].getBoundingClientRect().height,
+        left: (childPos.left + charWidth/2 - parentPos.left)/$('#game')[0].getBoundingClientRect().width
     }
     console.log(childOffset.top*100);
     console.log(childOffset.left*100);
