@@ -1,11 +1,11 @@
 /* Game Specific */
 .block {
-  height: 64px;
-  width: 64px;
+  height: 32px;
+  width: 32px;
   position: absolute;
   background-color: black;
   left: 320px;
-  top: 64px;
+  top: 32px;
 }
 
 #canvas {
