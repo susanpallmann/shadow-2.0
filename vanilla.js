@@ -55,21 +55,19 @@ $(document).ready(function() {
     // If not, step
 
     $(document).bind('keydown', function(e) {
-        console.log('key pressed');
         if (e.keyCode == 68) {
-            console.log('D pressed');
             // press the letter D
             let currentLeft = $('#character').css('left');
-            console.log(currentLeft);
+            currentLeft = parseInt(currentLeft, 10);
             $('#character').css('left', (currentLeft + 20) + 'px');
-            console.log((currentLeft + 20) + 'px');
-            //updateScroll();
+            updateScroll();
 
         } else if (e.keyCode == 65) {
             //press the letter A
             let currentLeft = $('#character').css('left');
+            currentLeft = parseInt(currentLeft, 10);
             $('#character').css('left', (currentLeft - 20) + 'px');
-            //updateScroll();
+            updateScroll();
         }
         return false;
     });
