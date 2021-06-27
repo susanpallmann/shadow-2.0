@@ -78,12 +78,14 @@ $(document).bind('keydown', function(e) {
         console.log('thisranA2');
         // press the letter D
         let currentLeft = $('#character').css('left');
+        currentLeft = parseInt(currentLeft, 10);
         $('#character').css('left', (currentLeft + 20) + 'px');
 
     } else if (e.keyCode == 65) {
         console.log('thisranA3');
         //press the letter A
         let currentLeft = $('#character').css('left');
+        currentLeft = parseInt(currentLeft, 10);
         $('#character').css('left', (currentLeft - 20) + 'px');
     }
     return false;
