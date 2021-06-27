@@ -19,6 +19,7 @@
   top: 50%;
   left: 50%;
   transition: all 0.2s;
+  background-image: url('background.jpg');
 }
 
 #character {
