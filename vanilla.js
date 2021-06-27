@@ -270,7 +270,7 @@ $(document).ready(function() {
     // Creating DOM elements for each actor in the game
     function drawActors(actors) {
         //TODO: elt is here too
-        return elt("div", {}, ...actors.map(actor = > {
+        return elt("div", {}, ...actors.map(actor => {
             let rect = elt("div", {class: `actor ${actor.type}`});
             rect.style.width = `${actor.size.x * scale}px`;
             rect.style.height = `${actor.size.y * scale}px`;
