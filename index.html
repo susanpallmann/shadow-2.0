@@ -68,6 +68,13 @@
     <!-- Scripts -->
     <script src="vanilla.js"></script>
     <script src="discount-bootstrap.js"></script>
+    
+    <!-- Game Start Script -->
+    <script>
+      let simpleLevel = new Level(simpleLevelPlan);
+      let display = new DOMDisplay(document.body, simpleLevel);
+      display.syncState(State.start(simpleLevel));
+    </script>
   </head>
   <body>
     <header></header>
@@ -81,12 +88,5 @@
         </div>
       </div>
     </main>-->
-    <div id="canvas">
-      <div id="game">
-        <div id="character">
-        </div>
-        <div class="block" solid="true"></div>
-      </div>
-    </div>
   </body>
 </html>
