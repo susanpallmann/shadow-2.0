@@ -186,6 +186,7 @@ $(document).ready(function() {
                     //       startActors array
                     // TODO: And since we know an actor is in that position, we determine the block it occupies to be empty and 
                     //       put that in the mapping array
+                    console.log(type);
                     this.startActors.push(
                         type.create(new Vec(x, y), ch));
                     return "empty";
@@ -266,6 +267,19 @@ $(document).ready(function() {
         ));
     }
     
+    // Creating DOM elements for each actor in the game
+    function drawActors(actors) {
+        //TODO: elt is here too
+        return elt("div", {}, ...actors.map(actor = > {
+            let rect = elt("div", {class: `actor ${actor.type}`});
+            rect.style.width = `${actor.size.x * scale}px`;
+            rect.style.height = `${actor.size.y * scale}px`;
+            rect.style.left = `${actor.pos.x * scale}px`;
+            rect.style.top = `${actor.pos.y * scale}px`;
+            return rect;
+        }));
+    }
+    
     
     // Creates display, when given an element to be appended to and a level object]
     class DOMDisplay {
@@ -285,4 +299,5 @@ $(document).ready(function() {
             this.dom.remove();
          }
     }
+    
 });
