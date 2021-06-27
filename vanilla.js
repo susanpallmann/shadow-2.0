@@ -53,19 +53,19 @@ $(document).ready(function() {
     // When player presses "D" key
     // Check if this movement would cause a collision
     // If not, step
-    
+    $(document).bind('keydown', function(e) {
+        if (e.keyCode == 68) {
+            // press the letter D
+            let currentLeft = $('#character').css('left');
+            $('#character').css('left', (currentLeft + 20) + 'px');
+
+        } else if (e.keyCode == 65) {
+            //press the letter A
+            let currentLeft = $('#character').css('left');
+            $('#character').css('left', (currentLeft - 20) + 'px');
+        }
+        return false;
+    });
+
 });
 
-$(document).bind('keydown', function(e) {
-    if (e.keyCode == 68) {
-        // press the letter D
-        let currentLeft = $('#character').css('left');
-        $('#character').css('left', (currentLeft + 20) + 'px');
-        
-    } else if (e.keyCode == 65) {
-        //press the letter A
-        let currentLeft = $('#character').css('left');
-        $('#character').css('left', (currentLeft - 20) + 'px');
-    }
-    return false;
-});
