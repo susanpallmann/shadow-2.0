@@ -60,15 +60,14 @@ $(document).ready(function() {
             let currentLeft = $('#character').css('left');
             currentLeft = parseInt(currentLeft, 10);
             $('#character').css('left', (currentLeft + 20) + 'px');
-            updateScroll();
 
         } else if (e.keyCode == 65) {
             //press the letter A
             let currentLeft = $('#character').css('left');
             currentLeft = parseInt(currentLeft, 10);
             $('#character').css('left', (currentLeft - 20) + 'px');
-            updateScroll();
         }
+        updateScroll();
         return false;
     });
 
