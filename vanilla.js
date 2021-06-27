@@ -8,8 +8,8 @@ $(document).ready(function() {
         top: (childPos.top + charHeight/2 - parentPos.top)/$('#game').height()*2,
         left: (childPos.left + charWidth/2 - parentPos.left)/$('#game').width()*2
     }
-    console.log(childOffset.top);
-    console.log(childOffset.left);
+    console.log(childOffset.top*100);
+    console.log(childOffset.left*100);
 
     function updateScroll(positionLeft, positionTop) {
         
