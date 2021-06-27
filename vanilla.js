@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
-    let charWidth = $('#character').getBoundingClientRect().width;
-    let charHeight = $('#character').getBoundingClientRect().height;
+    let charWidth = $('#character')[0].getBoundingClientRect().width;
+    let charHeight = $('#character')[0].getBoundingClientRect().height;
     let childPos = $('#character').offset();
     let parentPos = $('#character').parent().offset();
     let childOffset = {
