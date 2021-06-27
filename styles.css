@@ -3,6 +3,14 @@
 /* BTW we're adding .lost or .won to the .game element, in case 
  * we need that info for styling later. */
 
+/* Game wrapper */
+.game {
+  overflow: hidden;
+  max-width: 600px;
+  max-height: 450px;
+  position: relative;
+}
+
 /* Table containing our background */
 .background {
   background: rgb(52, 166, 251);
