@@ -305,4 +305,58 @@ $(document).ready(function() {
          }
     }
     
+    // Moves the game so the player is in view
+    // Rather than always moving when the player moves, there's a margin of non-moving area
+    // and if the player goes beyond this, the game is scrolled to center on the player
+    DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
+        
+        // Getting dimensions of the game
+        let width = this.dom.clientWidth;
+        let height = this.dom.clientHeight;
+        
+        // Margin for scrolling, changeable if we want more/less sensitivity to movement
+        let margin = width/3;
+        
+        // Getting viewport dimensions
+        let left = this.dom.scrollLeft;
+        let right = left + width;
+        let top = this.dom.scrollTop;
+        let bottom = top + height;
+        
+        // Getting center of player using our Vec object math methods
+        let player = state.player;
+        let center = player.pos.plus(player.size.times(0.5))
+                               .times(scale);
+        
+        // Actual logic to determine if the game needs scrolled or not
+        if (center.x < left + margin) {
+            this.dom.scrollLeft = center.x - margin;
+        } else if (center.x > right - margin) {
+            this.dom.scollLeft = center.x + margin - width;
+        }
+        
+        if (center.y < top + margin) {
+            this.dom.scrollTop = center.y - margin;
+        } else if (center.y > bottom - margin) {
+            this.dom.scollTop = center.y + margin - height;
+        }
+    }
+    
+    // Makes display show a given state
+    DOMDisplay.prototype.syncState = function(state) {
+        
+        // Removes existing actor layer if there is one
+        if (this.actorLayer) this.actorLayer.remove();
+        
+        // Redraws updated actor layer
+        this.actorLayer = drawActors(state.actors);
+        this.dom.appendChild(this.actorLayer);
+        
+        // Updates status class on wrapper div
+        this.dom.className = `game ${state.status}`;
+        
+        // Scrolls player into view
+        this.scrollPlayerIntoView(state);
+    }
+    
 });
