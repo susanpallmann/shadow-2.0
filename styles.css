@@ -29,6 +29,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
+  transition: all 0.2s;
 }
 
 /* Normal Styles */
