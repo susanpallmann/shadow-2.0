@@ -133,7 +133,7 @@ $(document).ready(function() {
         
         static create(pos) {
             
-            let basePos = pos.plus(new Vec(0.2), 0.1));
+            let basePos = pos.plus(new Vec(0.2, 0.1));
             
             // Okay I want to comment this one, but I just trust the dude's math
             // Random is to avoid coins moving in sync
