@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
     // Below focuses view on where character currently is by adjusting the position of the game element within the canvas element
-    function updateScroll(positionLeft, positionTop) {
+    function updateScroll() {
         
         let charWidth = $('#character')[0].getBoundingClientRect().width;
         let charHeight = $('#character')[0].getBoundingClientRect().height;
@@ -12,18 +12,18 @@ $(document).ready(function() {
             left: (childPos.left + charWidth/2 - parentPos.left)/$('#game')[0].getBoundingClientRect().width
         }
         
-        var newLeft = ((positionLeft*200)-100)*-1;
-        var newTop = ((positionTop*200)-100)*-1;
+        var newLeft = ((childOffset.left*200)-100)*-1;
+        var newTop = ((childOffset.top*200)-100)*-1;
         
         $('#game').css('left', newLeft + '%');
         $('#game').css('top', newTop + '%');
         
     }
     
-    updateScroll(childOffset.left, childOffset.top);
+    updateScroll();
     
     $(window).resize(function() {
-        updateScroll(childOffset.left, childOffset.top);
+        updateScroll();
     }
     
 });
