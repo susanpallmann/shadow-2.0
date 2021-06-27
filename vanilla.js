@@ -1,4 +1,4 @@
-$(document).ready(function() {
+//$(document).ready(function() {
     
     // Okay fine. We tried doing this from scratch but we don't have the background info we need to do it well.
     // This tutorial guy can code circles around me (and does), so I'm going to take his word for it.
@@ -359,4 +359,4 @@ $(document).ready(function() {
         this.scrollPlayerIntoView(state);
     }
     
-});
+//});
