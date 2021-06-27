@@ -186,7 +186,7 @@ $(document).ready(function() {
                     //       startActors array
                     // TODO: And since we know an actor is in that position, we determine the block it occupies to be empty and 
                     //       put that in the mapping array
-                    console.log(type);
+                    console.log(ch);
                     this.startActors.push(
                         type.create(new Vec(x, y), ch));
                     return "empty";
