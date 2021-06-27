@@ -1,9 +1,9 @@
 $(document).ready(function() {
     
-    let charWidth = $('#character').width();
-    let charHeight = $('#character').height();
-    let childPos = $('#character').getBoundingClientRect();
-    let parentPos = $('#character').parent().getBoundingClientRect();
+    let charWidth = $('#character').getBoundingClientRect().width;
+    let charHeight = $('#character').getBoundingClientRect().height;
+    let childPos = $('#character').offset();
+    let parentPos = $('#character').parent().offset();
     let childOffset = {
         top: (childPos.top + charHeight/2 - parentPos.top)/$('#game').height()*2,
         left: (childPos.left + charWidth/2 - parentPos.left)/$('#game').width()*2
