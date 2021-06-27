@@ -1,5 +1,8 @@
-/* Game Specific */
 /* Game Styles */
+
+/* BTW we're adding .lost or .won to the .game element, in case 
+ * we need that info for styling later. */
+
 /* Table containing our background */
 .background {
   background: rgb(52, 166, 251);
