@@ -56,6 +56,7 @@ $(document).ready(function() {
     $(document).bind('keydown', function(e) {
         console.log('key pressed');
         if (e.keyCode == 68) {
+            console.log('D pressed');
             // press the letter D
             let currentLeft = $('#character').css('left');
             $('#character').css('left', (currentLeft + 20) + 'px');
