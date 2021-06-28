@@ -681,9 +681,8 @@ DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
 
     // Getting dimensions of the game
     let width = this.dom.clientWidth;
-    console.log(width);
     let height = this.dom.clientHeight;
-    console.log(height);
+    
 
     // Margin for scrolling, changeable if we want more/less sensitivity to movement
     let margin = width/3;
@@ -697,6 +696,7 @@ DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
     let center = player.pos.plus(player.size.times(0.5))
                            .times(scale);
 
+    console.log(center);
     // Actual logic to determine if the game needs scrolled or not
     if (center.x < left + margin) {
         this.dom.scrollLeft = center.x - margin;
