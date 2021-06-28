@@ -10,3 +10,12 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 - [x] Follow basic platformer tutorial to completion - *2.0*
 - [x] Update player art - *2.1*
 - [ ] Experiment by adding "water" - *in progress*
+
+## Planned Mechanics
+
+### Learnable Adaptations
+
+#### Legs
+- Frog legs (jump boost)
+- Cheetah legs? (speed boost)
+- Bug legs? (walk on ceiling)
