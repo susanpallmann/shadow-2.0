@@ -1,7 +1,8 @@
 # unnamed-game
-Description to come ¯\\\_(ツ)\_/¯
 
-Version: 1.0
+**Version: 1.0**
+
+Description to come eventually ¯\\\_(ツ)\_/¯
 
 *It has been **0** days since a typo broke everything.* 
 
