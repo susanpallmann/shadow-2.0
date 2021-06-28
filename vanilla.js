@@ -224,9 +224,9 @@ class Player {
     // TODO: I think this creates the player when the game is first started and isn't used again
     // Initial position is set to be 1/2 square unit above its starting place because the character 
     // is 1.5 units tall
-    static create(pos) {
+    static create(pos, direction) {
         return new Player(pos.plus(new Vec(0, -0.5)),
-                          new Vec(0, 0), "right");
+                          new Vec(0, 0), direction);
     }
 }
 
