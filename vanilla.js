@@ -486,7 +486,7 @@ Player.prototype.update = function(time, state, keys) {
     let xSpeed = 0;
     
     // Stores new direction
-    let direction;
+    let direction = this.direction;
     
     // Adds or subtracts speed based on which key was pressed
     if (keys.ArrowLeft) {
