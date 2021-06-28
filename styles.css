@@ -42,6 +42,10 @@
   background-repeat: no-repeat;
 }
 
+.grass.interacting {
+  background-image: url('grass-blue.png');
+}
+
 /* Actors need to move independent of the table */
 .actor {
   position: absolute;
