@@ -6,8 +6,8 @@
 /* Game wrapper */
 .game {
   overflow: hidden;
-  max-width: 600px;
-  max-height: 450px;
+  width: 100%;
+  height: 100vh;
   position: relative;
 }
 
