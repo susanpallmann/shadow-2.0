@@ -676,6 +676,8 @@ function drawActors(actors) {
     // Creates elements based on each actor's object properties, multiplied by game scale
     // Elements have their actor types as classes in addition to an "actor" class
     return elt("div", {}, ...actors.map(actor => {
+        let actorType = actor.type;
+        console.log(actorType);
         let rect = elt("div", {class: `actor ${actor.type} ${actor.direction} `});
         rect.style.width = `${actor.size.x * scale}px`;
         rect.style.height = `${actor.size.y * scale}px`;
