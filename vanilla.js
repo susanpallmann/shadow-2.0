@@ -679,19 +679,18 @@ class DOMDisplay {
 // and if the player goes beyond this, the game is scrolled to center on the player
 DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
 
-    console.log('scroll function ran');
     // Getting dimensions of the game
     let width = this.dom.clientWidth;
+    console.log(width);
     let height = this.dom.clientHeight;
+    console.log(height);
 
     // Margin for scrolling, changeable if we want more/less sensitivity to movement
     let margin = width/3;
 
     // Getting viewport dimensions
-    let left = this.dom.scrollLeft;
-    let right = left + width;
-    let top = this.dom.scrollTop;
-    let bottom = top + height;
+    let left = this.dom.scrollLeft, right = left + width;
+    let top = this.dom.scrollTop, bottom = top + height;
 
     // Getting center of player using our Vec object math methods
     let player = state.player;
