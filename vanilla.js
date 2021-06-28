@@ -231,7 +231,7 @@ class Player {
 
 // Since size isn't changing, we're storing this on the prototype rather than the instance
 // TODO: May need to change this if game mechanics decide to change size
-Player.prototype.size = new Vec(0.8, 1.5);
+Player.prototype.size = new Vec(0.6, 1.5);
 
 // Class to store lava actors (keeping in mind they can behave in three different ways
 class Lava {
