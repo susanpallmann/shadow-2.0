@@ -288,7 +288,8 @@ class Grass {
     
     static create(pos, interacting) {
         let newInteracting = interacting;
-        if (interacting !> 0) {
+        if (interacting > 0) {
+        } else {
             newInteracting = 0;
         }
         return new Grass(pos, newInteracting);
