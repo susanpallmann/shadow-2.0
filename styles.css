@@ -31,6 +31,9 @@
 /* Walls are white for now */
 .wall {
   background: #fff;
+  background-image: url('grass.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Actors need to move independent of the table */
