@@ -491,6 +491,11 @@ Coin.prototype.update = function(time) {
                     this.basePos, wobble);
 };
 
+// Update Grass
+Grass.prototype.update = function(time) {
+    return new Grass(this.pos);
+}
+
 
 /* -------------------------------------------------------------------------------------------------- */
 // This is still an update, but it's the player update so it's getting its own fancy header
