@@ -42,7 +42,7 @@
   background-repeat: no-repeat;
 }
 
-.grass.interacting {
+.grass.int1, .grass.int2, .grass.int3, .grass.int4, .grass.int5 {
   background-image: url('grass-blue.png');
 }
 
