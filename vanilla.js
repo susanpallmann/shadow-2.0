@@ -693,14 +693,18 @@ DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
     // Actual logic to determine if the game needs scrolled or not
     if (center.x < left + margin) {
         this.dom.scrollLeft = center.x - margin;
+        console.log(center.x - margin);
     } else if (center.x > right - margin) {
         this.dom.scollLeft = center.x + margin - width;
+        console.log(center.x + margin - width);
     }
 
     if (center.y < top + margin) {
         this.dom.scrollTop = center.y - margin;
+        console.log(center.y - margin);
     } else if (center.y > bottom - margin) {
         this.dom.scollTop = center.y + margin - height;
+        console.log(center.y + margin - height);
     }
 }
 
