@@ -443,7 +443,7 @@ Lava.prototype.update = function(time, state) {
         
     // If the lava does collide and has a reset, it resets
     } else if (this.reset) {
-        return new Lava(this.pos, this.speed, this.reset);
+        return new Lava(this.reset, this.speed, this.reset);
         
     // If neither of the above are true, lava inverts its speed to go the other way
     } else {
