@@ -277,16 +277,17 @@ Lava.prototype.size = new Vec(1,1);
 
 // Class to store grass actors
 class Grass {
-    constructor(pos) {
+    constructor(pos, interacting) {
         this.pos = pos;
+        this.interacting = interacting;
     }
     
     get type() {
         return "grass";
     }
     
-    static create(pos) {
-        return new Grass(pos);
+    static create(pos, interacting) {
+        return new Grass(pos, interacting);
     }
 }
 
@@ -493,9 +494,16 @@ Coin.prototype.update = function(time) {
 
 // Update Grass
 Grass.prototype.update = function(time) {
-    return new Grass(this.pos);
+    let newCount;
+    if (this.interacting < 10 && this.interacting > 0) {
+        newCount = this.interacting + 1;
+    } else if (this.interacting == 10) {
+        newCount = 0;
+    } else {
+        newCount = this.interacting;
+    }
+    return new Grass(this.pos, newCount);
 }
-
 
 /* -------------------------------------------------------------------------------------------------- */
 // This is still an update, but it's the player update so it's getting its own fancy header
@@ -680,6 +688,12 @@ function drawActors(actors) {
         let rect;
         if (actorType == "player") {
             rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`});
+        } else if (actorType == "grass") {
+            if (actor.interacting = 0) {
+                rect = elt("div", {class: `actor ${actor.type}`});
+            } else {
+                rect = elt("div", {class: `actor ${actor.type} int-${actor.interacting}`});
+            }
         } else {
             rect = elt("div", {class: `actor ${actor.type}`});
         }
