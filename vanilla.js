@@ -9,6 +9,7 @@
 // DO NOT indent this in GitHub's editor, it counts the spaces when the map is read lol
 // . = empty
 // # = wall
+// * = grass
 // + = lava
 // @ = character
 // o = coin
@@ -24,9 +25,9 @@ let gameLevels = [`
 ............................................................................##..
 ..##......................................o.o................................#..
 ..#.....................o....................................................#..
-..#......................................#####.............................o.#..
+..#..........****........................#####.............................o.#..
 ..#..........####.......o....................................................#..
-..#..@.......#..#................................................#####.......#..
+..#..@..***..#..#.....***........................................#####.......#..
 ..############..###############...####################.....#######...#########..
 ..............................#...#..................#.....#....................
 ..............................#+++#..................#+++++#....................
@@ -274,6 +275,23 @@ class Lava {
 // Like the player, size doesn't need to be stored on the instance since it shouldn't be changing
 Lava.prototype.size = new Vec(1,1);
 
+// Class to store grass actors
+class Grass {
+    constructor(pos) {
+        this.pos = pos;
+    }
+    
+    get type() {
+        return "grass";
+    }
+    
+    static create(pos) {
+        return new Grass(pos);
+    }
+}
+
+Grass.prototype.size = new Vec(1, 1);
+
 // Class to store coin actors, now with more math!
 class Coin {
 
@@ -305,7 +323,7 @@ Coin.prototype.size = new Vec(0.6, 0.6);
 // It's important that background items are strings, and actors are not
 const levelChars = {
     ".": "empty", "#": "wall", "+": "lava",
-    "@": Player, "o": Coin,
+    "@": Player, "o": Coin, "*": Grass,
     "=": Lava, "|": Lava, "v": Lava
 };
 
@@ -425,6 +443,12 @@ Coin.prototype.collide = function(state) {
     // Updates game state to "won" if that was the last coin
     if (!filtered.some(a => a.type === "coin")) status = "won";
     return new State(state.level, filtered, status);
+}
+
+// If player walks through grass, console log for now TODO: change this
+Grass.prototype.collide = function(state) {
+    console.log('walked through grass');
+    return new State(state.level, state.actors, status);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
