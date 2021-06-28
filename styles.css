@@ -31,9 +31,18 @@
 /* Walls are white for now */
 .wall {
   background: #fff;
-  background-image: url('grass.jpg');
+  background-image: url('ground.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.grass {
+  background-image: url('grass.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.grass.waving {
 }
 
 /* Actors need to move independent of the table */
