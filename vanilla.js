@@ -677,10 +677,11 @@ function drawActors(actors) {
     // Elements have their actor types as classes in addition to an "actor" class
     return elt("div", {}, ...actors.map(actor => {
         let actorType = actor.type;
+        let rect;
         if (actorType == "player") {
-            let rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`});
+            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`});
         } else {
-            let rect = elt("div", {class: `actor ${actor.type}`});
+            rect = elt("div", {class: `actor ${actor.type}`});
         }
         rect.style.width = `${actor.size.x * scale}px`;
         rect.style.height = `${actor.size.y * scale}px`;
