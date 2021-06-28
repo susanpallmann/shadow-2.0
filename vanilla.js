@@ -239,15 +239,18 @@ class State {
 // This function deals with two actors instead of (presumably) an actor and a background block
 function overlap(actor1, actor2) {
     
-    // Evaluates to true if the actors touch
+    // Evaluates to true if the actors touch each other
     return actor1.pos.x + actor1.size.x > actor2.pos.x &&
            actor1.pos.x < actor2.pos.x + actor2.size.x &&
            actor1.pos.y + actor1.size.y > actor2.pos.y &&
            actor1.pos.y < actor2.pos.y + actor2.size.y;
 }
 
+/* -------------------------------------------------------------------------------------------------- */
 // Keeping collision methods together since this will be a very important place I add on to later
 // Previously tried to keep prototype methods near their respective classes and constructors
+// BEGIN COLLISIONS
+/* -------------------------------------------------------------------------------------------------- */
 
 // If player collides with lava, this method is called
 Lava.prototype.collide = function(state) {
@@ -265,6 +268,47 @@ Coin.prototype.collide = function(state) {
     if (!filtered.some(a => a.type === "coin")) status = "won";
     return new State(state.level, filtered, status);
 }
+
+/* -------------------------------------------------------------------------------------------------- */
+// Keeping actor update methods together because they depend on code that currently comes after their classes
+// BEGIN ACTOR UPDATES
+/* -------------------------------------------------------------------------------------------------- */
+
+// Update Lava
+Lava.prototype.update = function(time, state) {
+    
+    // Calculates new position based on time and speed
+    let newPos = this.pos.plus(this.speed.times(time));
+    
+    // If the lava won't collide with a wall, moves to the new position
+    if (!state.level.touches(newPos, this.size, "wall")) {
+        return new Lava(newPos, this.speed, this.reset);
+        
+    // If the lava does collide and has a reset, it resets
+    } else if (this.reset) {
+        return new Lava(this.pos, this.speed, this.reset);
+        
+    // If neither of the above are true, lava inverts its speed to go the other way
+    } else {
+        return new Lava(this.pos, this.speed.times(-1));
+    }
+}
+
+// Set constants for speed and distance of wobble
+const wobbleSpeed = 8, wobbleDist = 0.07;
+
+// Update Coin (used to wobble)
+Coin.prototype.update = function(time) {
+    
+    // Calculates new position
+    let wobble = this.wobble + time * wobbleSpeed;
+    let wobblePos = Math.sin(wobble) * wobbleDist;
+
+    // Updates Coin with new position
+    return new Coin(this.basePos.plus(new Vec(0, wobblePos)),
+                    this.basePos, wobble);
+};
+
 
 // Updates state if player touches lava 
 // TODO: May want to expand this to do other things later since lava isn't an endgame goal
