@@ -706,7 +706,7 @@ class DOMDisplay {
 DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
   let width = this.dom.clientWidth;
   let height = this.dom.clientHeight;
-  let margin = width / 6;
+  let margin = width / 5;
 
   // The viewport
   let left = this.dom.scrollLeft, right = left + width;
