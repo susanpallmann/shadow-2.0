@@ -609,7 +609,7 @@ function elt(name, attrs, ...children) {
 }
 
 // Scale of one in-game unit in pixels
-const scale = 64;
+const scale = 32;
 
 // Creating the background grid from level object
 // We're drawing a table since our maps are grid-based
@@ -679,6 +679,7 @@ class DOMDisplay {
 // and if the player goes beyond this, the game is scrolled to center on the player
 DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
 
+    console.log('scroll function ran');
     // Getting dimensions of the game
     let width = this.dom.clientWidth;
     let height = this.dom.clientHeight;
