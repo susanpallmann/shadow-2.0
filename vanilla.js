@@ -271,7 +271,7 @@ Coin.prototype.collide = function(state) {
 State.prototype.update = function(time, keys) {
     
     // Regenerating our list of actors, getting current state, getting current level
-    let actors = this.actors;
+    let actors = this.actors
         .map(actor => actor.update(time, this, keys));
     let newState = new State(this.level, actors, this.status);
     
