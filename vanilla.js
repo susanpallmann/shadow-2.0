@@ -277,22 +277,16 @@ Lava.prototype.size = new Vec(1,1);
 
 // Class to store grass actors
 class Grass {
-    constructor(pos, interacting) {
+    constructor(pos) {
         this.pos = pos;
-        this.interacting = interacting;
     }
     
     get type() {
         return "grass";
     }
     
-    static create(pos, interacting) {
-        let newInteracting = interacting;
-        if (interacting > 0) {
-        } else {
-            newInteracting = 0;
-        }
-        return new Grass(pos, newInteracting);
+    static create(pos) {
+        return new Grass(pos);
     }
 }
 
@@ -693,12 +687,6 @@ function drawActors(actors) {
         let rect;
         if (actorType == "player") {
             rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`});
-        } else if (actorType == "grass") {
-            if (actor.interacting === 0) {
-                rect = elt("div", {class: `actor ${actor.type}`});
-            } else {
-                rect = elt("div", {class: `actor ${actor.type} int-${actor.interacting}`});
-            }
         } else {
             rect = elt("div", {class: `actor ${actor.type}`});
         }
