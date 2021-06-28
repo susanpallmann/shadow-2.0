@@ -15,7 +15,32 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 
 ### Learnable Adaptations
 
+#### Not assigned
+- increased walking speed
+  - cheetah legs
+- increased jump height
+- increased swimming speed
+- increased defense
+- increased attack
+- increased health
+- increased breath
+- increased break strength
+- reduced fall damage
+- climb walls
+- climb ceilings
+- fire breath
+- tongue attack
+- ink attack
+
+
+#### If feasible
+- fly?
+
+
+#### Head
+
+#### Body
+
+#### Arms
+
 #### Legs
-- Frog legs (jump boost)
-- Cheetah legs? (speed boost)
-- Bug legs? (walk on ceiling)
