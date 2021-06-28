@@ -40,6 +40,7 @@
   background-image: url('grass.png');
   background-size: contain;
   background-repeat: no-repeat;
+  animation: grass-walked 2s ease-in-out 0s 1;
 }
 
 .grass.waving {
