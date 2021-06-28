@@ -685,7 +685,7 @@ DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
     
 
     // Margin for scrolling, changeable if we want more/less sensitivity to movement
-    let margin = width/3;
+    let margin = width/10;
 
     // Getting viewport dimensions
     let left = this.dom.scrollLeft, right = left + width;
