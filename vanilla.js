@@ -446,7 +446,7 @@ function elt(name, attrs, ...children) {
 }
 
 // Scale of one in-game unit in pixels
-const scale = 64;
+const scale = 32;
 
 // Creating the background grid from level object
 // We're drawing a table since our maps are grid-based
