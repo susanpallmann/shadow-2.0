@@ -73,8 +73,6 @@
   </body>
   <!-- Game Start Script -->
     <script>
-      let simpleLevel = new Level(simpleLevelPlan);
-      let display = new DOMDisplay(document.body, simpleLevel);
-      display.syncState(State.start(simpleLevel));
+      runGame(gameLevels, DOMDisplay);
     </script>
 </html>
