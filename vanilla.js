@@ -671,7 +671,7 @@ class DOMDisplay {
 // Moves the game so the player is in view
 // Rather than always moving when the player moves, there's a margin of non-moving area
 // and if the player goes beyond this, the game is scrolled to center on the player
-DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
+/*DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
 
     // Getting dimensions of the game
     let width = this.dom.clientWidth;
@@ -702,7 +702,31 @@ DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
     } else if (center.y > bottom - margin) {
         this.dom.scollTop = Math.round(center.y + margin - height);
     }
-}
+}*/
+DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
+  let width = this.dom.clientWidth;
+  let height = this.dom.clientHeight;
+  let margin = width / 3;
+
+  // The viewport
+  let left = this.dom.scrollLeft, right = left + width;
+  let top = this.dom.scrollTop, bottom = top + height;
+
+  let player = state.player;
+  let center = player.pos.plus(player.size.times(0.5))
+                         .times(scale);
+
+  if (center.x < left + margin) {
+    this.dom.scrollLeft = center.x - margin;
+  } else if (center.x > right - margin) {
+    this.dom.scrollLeft = center.x + margin - width;
+  }
+  if (center.y < top + margin) {
+    this.dom.scrollTop = center.y - margin;
+  } else if (center.y > bottom - margin) {
+    this.dom.scrollTop = center.y + margin - height;
+  }
+};
 
 // Makes display show a given state
 DOMDisplay.prototype.syncState = function(state) {
