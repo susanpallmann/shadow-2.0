@@ -344,7 +344,7 @@ class Level {
                 // TODO: And since we know an actor is in that position, we determine the block it occupies to be empty and 
                 //       put that in the mapping array
                 this.startActors.push(
-                    type.create(new Vec(x, y), ch));
+                    type.create(new Vec(x, y), ch, "right"));
                 return "empty";
             });
         });
