@@ -16,6 +16,58 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 ### Learnable Adaptations
 
 #### Not assigned
+
+#### If feasible
+- fly?
+
+
+#### Head
+- increased attack
+  - bull horns
+  - rhinoceros horn
+- increased breath
+  - shark gills
+- fire breath
+  - lizard head
+- tongue attack
+  - frog head
+- glow
+  - angler fish antenna
+
+#### Body
+- increased defense
+  - rhino skin
+- increased inventory
+  - kangaroo pouch
+- does damage when attacked
+  - poison dart frog skin
+- invisibility (no aggro from monsters)
+  - squid skin
+
+#### Back
+- increased swimming speed
+  - shark fin
+- increased defense
+  - hermit crab shell
+  - turtle shell
+- increased inventory
+  - camel hump
+- reduced fall damage
+  - hermit crab shell
+  - turtle shell
+- does damage when attacked
+  - porcupine spines
+  - lionfish spines
+
+#### Arms
+- increased swimming speed
+  - lionfish fins
+- increased break strength
+  - lobster claws
+- climb walls
+  - squid arms
+
+#### Legs
 - decreased walking speed
   - sloth legs
 - decreased jump height
@@ -28,54 +80,9 @@ Description to come eventually ¯\\\_(ツ)\_/¯
   - kangaroo legs
 - increased swimming speed
   - dolphin tail
-  - shark fin
-  - lionfish fins
-- increased defense
-  - rhino skin
-  - hermit crab shell
-  - turtle shell
-- increased attack
-  - bull horns
-  - rhinoceros horn
-- increased breath
-  - shark gills
-- increased break strength
-  - lobster claws
-- increased inventory
-  - camel hump
-  - kangaroo pouch
-- reduced fall damage
-  - hermit crab shell
-  - turtle shell
 - climb walls
-  - squid arms
   - lobster legs
 - climb ceilings
   - lobster legs
-- fire breath
-  - lizard head
-- tongue attack
-  - frog head
 - ink attack
   - squid legs
-- does damage when attacked
-  - porcupine spines
-  - lionfish spines
-  - poison dart frog skin
-- glow
-  - angler fish antenna
-
-
-#### If feasible
-- fly?
-
-
-#### Head
-
-#### Body
-
-#### Back
-
-#### Arms
-
-#### Legs
