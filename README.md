@@ -16,8 +16,13 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 ### Learnable Adaptations
 
 #### Not assigned
+- decreased walking speed
+  - sloth legs
+- decreased jump height
+  - sloth legs
 - increased walking speed
   - cheetah legs
+  - deer legs
 - increased jump height
   - frog legs
   - kangaroo legs
@@ -26,31 +31,39 @@ Description to come eventually ¯\\\_(ツ)\_/¯
   - shark fin
   - lionfish fins
 - increased defense
+  - rhino skin
+  - hermit crab shell
+  - turtle shell
 - increased attack
-- increased health
+  - bull horns
+  - rhinoceros horn
 - increased breath
   - shark gills
 - increased break strength
+  - lobster claws
 - increased inventory
   - camel hump
   - kangaroo pouch
 - reduced fall damage
+  - hermit crab shell
+  - turtle shell
 - climb walls
+  - squid arms
+  - lobster legs
 - climb ceilings
+  - lobster legs
 - fire breath
+  - lizard head
 - tongue attack
   - frog head
-  - 
 - ink attack
   - squid legs
 - does damage when attacked
   - porcupine spines
   - lionfish spines
   - poison dart frog skin
-- charge attack
--   bull horns
 - glow
--   angler fish antenna
+  - angler fish antenna
 
 
 #### If feasible
@@ -60,6 +73,8 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 #### Head
 
 #### Body
+
+#### Back
 
 #### Arms
 
