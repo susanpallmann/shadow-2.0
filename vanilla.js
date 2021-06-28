@@ -485,7 +485,10 @@ Player.prototype.update = function(time, state, keys) {
     let xSpeed = 0;
     
     // Adds or subtracts speed based on which key was pressed
-    if (keys.ArrowLeft) xSpeed -= playerXSpeed;
+    if (keys.ArrowLeft) {
+        xSpeed -= playerXSpeed;
+        console.log('test');
+    }
     if (keys.ArrowRight) xSpeed += playerXSpeed;
     
     // Current position
