@@ -696,22 +696,19 @@ DOMDisplay.prototype.scrollPlayerIntoView = function(state) {
     let center = player.pos.plus(player.size.times(0.5))
                            .times(scale);
 
-    console.log(center);
     // Actual logic to determine if the game needs scrolled or not
     if (center.x < left + margin) {
-        this.dom.scrollLeft = center.x - margin;
-        console.log('ran1');
+        //this.dom.scrollLeft = center.x - margin;
+        this.dom.scrollLeft = 40;
     } else if (center.x > right - margin) {
         this.dom.scollLeft = center.x + margin - width;
-        console.log('ran2');
     }
 
     if (center.y < top + margin) {
         this.dom.scrollTop = center.y - margin;
-        console.log('ran3');
     } else if (center.y > bottom - margin) {
-        this.dom.scollTop = center.y + margin - height;
-        console.log('ran4');
+        //this.dom.scollTop = center.y + margin - height;
+        this.dom.scrollTop = 40;
     }
 }
 
