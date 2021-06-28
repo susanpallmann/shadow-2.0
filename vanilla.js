@@ -205,13 +205,14 @@ class Vec {
 
 // Class to store player actor
 class Player {
-    constructor(pos, speed) {
+    constructor(pos, speed, direction) {
 
         // Has position and speed properties
         // TODO: May want to add more properties down the road with evolution in mind,
         //       if this is the right place to do so?
         this.pos = pos;
         this.speed = speed;
+        this.direction = direction;
     }
 
     // This answers the level constructor's check for type
@@ -225,7 +226,7 @@ class Player {
     // is 1.5 units tall
     static create(pos) {
         return new Player(pos.plus(new Vec(0, -0.5)),
-                          new Vec(0, 0));
+                          new Vec(0, 0), "right");
     }
 }
 
@@ -484,12 +485,18 @@ Player.prototype.update = function(time, state, keys) {
     // Starts speed at 0
     let xSpeed = 0;
     
+    // Stores new direction
+    let direction;
+    
     // Adds or subtracts speed based on which key was pressed
     if (keys.ArrowLeft) {
         xSpeed -= playerXSpeed;
-        console.log('test');
+        direction = "left";
     }
-    if (keys.ArrowRight) xSpeed += playerXSpeed;
+    if (keys.ArrowRight) {
+        xSpeed += playerXSpeed;
+        direction = "right";
+    }
     
     // Current position
     let pos = this.pos;
@@ -524,7 +531,7 @@ Player.prototype.update = function(time, state, keys) {
     } else {
         ySpeed = 0;
     }
-    return new Player(pos, new Vec(xSpeed, ySpeed));
+    return new Player(pos, new Vec(xSpeed, ySpeed), direction);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -640,7 +647,7 @@ function drawActors(actors) {
     // Creates elements based on each actor's object properties, multiplied by game scale
     // Elements have their actor types as classes in addition to an "actor" class
     return elt("div", {}, ...actors.map(actor => {
-        let rect = elt("div", {class: `actor ${actor.type}`});
+        let rect = elt("div", {class: `actor ${actor.type} ${actor.direction} `});
         rect.style.width = `${actor.size.x * scale}px`;
         rect.style.height = `${actor.size.y * scale}px`;
         rect.style.left = `${actor.pos.x * scale}px`;
