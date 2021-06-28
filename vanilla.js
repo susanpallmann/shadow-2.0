@@ -689,7 +689,7 @@ function drawActors(actors) {
         if (actorType == "player") {
             rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`});
         } else if (actorType == "grass") {
-            if (actor.interacting == 0) {
+            if (actor.interacting === 0) {
                 rect = elt("div", {class: `actor ${actor.type}`});
             } else {
                 rect = elt("div", {class: `actor ${actor.type} int-${actor.interacting}`});
