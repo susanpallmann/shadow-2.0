@@ -448,7 +448,7 @@ Coin.prototype.collide = function(state) {
 // If player walks through grass, console log for now TODO: change this
 Grass.prototype.collide = function(state) {
     console.log('walked through grass');
-    return new State(state.level, state.actors, status);
+    return new State(state.level, state.actors, state.status);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
