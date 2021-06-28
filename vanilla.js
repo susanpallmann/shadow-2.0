@@ -15,7 +15,7 @@
 // = = sideways moving lava
 // v = dripping lava
 // | = up/down moving lava
-let simpleLevelPlan = `
+let gameLevels = [`
 ......................
 ..#................#..
 ..#..............=.#..
@@ -24,7 +24,7 @@ let simpleLevelPlan = `
 ..#####............#..
 ......#++++++++++++#..
 ......##############..
-......................`;
+......................`];
 
 // Class to store 2-dimensional values, position and size of actors
 class Vec {
@@ -310,6 +310,88 @@ Coin.prototype.update = function(time) {
 };
 
 
+/* -------------------------------------------------------------------------------------------------- */
+// This is still an update, but it's the player update so it's getting its own fancy header
+// BEGIN PLAYER UPDATES/MOVEMENT
+/* -------------------------------------------------------------------------------------------------- */
+
+// Starting with some constants for player speed/gravity/etc.
+// TODO: We might want to change these later so they aren't constants given planned game mechanics
+const playerXSpeed = 7;
+const gravity = 30;
+const jumpSpeed = 17;
+
+// Updates player based on key presses currently registered
+Player.prototype.update = function(time, state, keys) {
+    
+    // Starts speed at 0
+    let xSpeed = 0;
+    
+    // Adds or subtracts speed based on which key was pressed
+    if (keys.ArrowLeft) xSpeed -= playerXSpeed;
+    if (keys.ArrowRight) xSpeed += playerXSpeed;
+    
+    // Current position
+    let pos = this.pos;
+    
+    // New position if move is successful
+    let movedX = pos.plus(new Vec(xSpeed * time, 0));
+    
+    // Checks if new position would collide with a wall
+    if (!state.level.touches(movedX, this.size, "wall")) {
+        // If it does not, changes position to new position
+        pos = movedX;
+    }
+    
+    // Speed does not start at 0 due to gravity
+    let ySpeed = this.speed.y + time * gravity;
+    
+    // New position if move is successful
+    let movedY = pos.plus(new Vec(0, ySpeed * time));
+    
+    // Checks if new position would collide with a wall
+    if (!state.level.touches(movedY, this.size, "wall")) {
+        // If it does not, changes position to new position
+        pos = movedY;
+        
+    // Otherwise, checks if up arrow is being pressed and we are moving down
+    } else if (keys.ArrowUp && ySpeed > 0) {
+        
+        // Causes the player to jump
+        ySpeed = -jumpSpeed;
+        
+    // If neither of the above, sets speed to 0 (so it collided with a wall)
+    } else {
+        ySpeed = 0;
+    }
+    return new Player(pos, new Vec(xSpeed, ySpeed));
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+// Key tracking for player movement
+// BEGIN KEY TRACKING
+/* -------------------------------------------------------------------------------------------------- */
+
+// Given array of keys, registers keyup/keydown listeners, this lets us change controls later I think
+// TODO: Probably should document this more thoroughly but I'm getting really tired here
+function trackKeys(keys) {
+    let down = Object.create(null);
+    function track(event) {
+        if (keys.includes(event.key)) {
+            down[event.key] = event.type == "keydown";
+            event.preventDefault();
+        }
+    }
+    window.addEventListener("keydown", track);
+    window.addEventListener("keyup", track);
+    return down;
+}
+
+
+const arrowKeys =
+    trackKeys(["ArrowLeft", "ArrowRight", "ArrowUp"]);
+
+
 // Updates state if player touches lava 
 // TODO: May want to expand this to do other things later since lava isn't an endgame goal
 State.prototype.update = function(time, keys) {
@@ -481,4 +563,55 @@ DOMDisplay.prototype.syncState = function(state) {
 
     // Scrolls player into view
     this.scrollPlayerIntoView(state);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+// Running the game
+// BEGIN GAME RUNNING
+// TODO: Fix this commenting too; goodness I'm tired; I'm just going to paste these all in for now and
+// comment tomorrow; good thing is it's not my code so I'm not going to forget what I already don't know
+/* -------------------------------------------------------------------------------------------------- */
+
+function runAnimation(frameFunc) {
+    let lastTime = null;
+    function frame(time) {
+        if (lastTime != null) {
+            let timeStep = Math.min(time - lastTime, 100) / 1000;
+            if (frameFunc(timeStep) === false) return;
+        }
+        lastTime = time;
+        requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+}
+
+function runLevel(level, Display) {
+    let display = new Display(document.body, level);
+    let state = State.start(level);
+    let ending = 1;
+    return new Promise(resolve => {
+        runAnimation(time => {
+            state = state.update(time, arrowKeys);
+            display.syncState(state);
+            if (state.status == "playing") {
+            return true;
+            } else if (ending > 0) {
+            ending -= time;
+            return true;
+            } else {
+            display.clear();
+            resolve(state.status);
+            return false;
+            }
+        });
+    });
+}
+
+async function runGame(plans, Display) {
+    for (let level = 0; level < plans.length;) {
+        let status = await runLevel(new Level(plans[level]),
+                                    Display);
+        if (status == "won") level++;
+    }
+    console.log("You've won!");
 }
