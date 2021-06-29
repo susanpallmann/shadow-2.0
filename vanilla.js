@@ -540,7 +540,7 @@ Player.prototype.update = function(time, state, keys) {
     if (keys.ArrowRight) {
         let movedXTemp = xSpeed += 0.5*playerXSpeed;
         if (state.level.touches(movedXTemp, this.size, "water")) {
-            xSpeed -= 0.5*playerXSpeed;
+            xSpeed += 0.5*playerXSpeed;
         } else {
             xSpeed += playerXSpeed;
         }
