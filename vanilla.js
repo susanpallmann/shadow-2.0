@@ -532,8 +532,10 @@ Player.prototype.update = function(time, state, keys) {
         let movedXTemp = xSpeed -= 0.2*playerXSpeed;
         if (state.level.touches(movedXTemp, this.size, "water")) {
             xSpeed -= 0.2*playerXSpeed;
+            console.log(xSpeed + ' touched water');
         } else {
             xSpeed -= playerXSpeed;
+            console.log(xSpeed + ' didnt touch water');
         }
         direction = "left";
     }
@@ -541,8 +543,10 @@ Player.prototype.update = function(time, state, keys) {
         let movedXTemp = xSpeed += 0.2*playerXSpeed;
         if (state.level.touches(movedXTemp, this.size, "water")) {
             xSpeed += 0.2*playerXSpeed;
+            console.log(xSpeed + ' touched water');
         } else {
             xSpeed += playerXSpeed;
+            console.log(xSpeed + ' didnt touched water');
         }
         direction = "right";
     }
