@@ -42,7 +42,7 @@
   background-repeat: no-repeat;
 }
 
-.grass::nth-child(2) {
+.grass::nth-child(2n) {
   transform: rotateY(180deg);
 }
 
