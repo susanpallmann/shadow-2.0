@@ -513,7 +513,7 @@ Grass.prototype.update = function(time) {
 // TODO: We might want to change these later so they aren't constants given planned game mechanics
 const playerXSpeed = 7;
 const gravity = 30;
-const jumpSpeed = 17;
+const jumpSpeed = 14;
 
 // Updates player based on key presses currently registered
 Player.prototype.update = function(time, state, keys) {
@@ -561,10 +561,10 @@ Player.prototype.update = function(time, state, keys) {
     
     // New position if move is successful
     let movedY;
-    movedY= pos.plus(new Vec(0, ySpeed * time * 0.4));
+    movedY= pos.plus(new Vec(0, ySpeed * time * 0.5));
     
     if (state.level.touches(movedY, this.size, "water")) {
-        movedY= pos.plus(new Vec(0, ySpeed * time * 0.4));
+        movedY= pos.plus(new Vec(0, ySpeed * time * 0.5));
     } else {
         movedY= pos.plus(new Vec(0, ySpeed * time));
     }
