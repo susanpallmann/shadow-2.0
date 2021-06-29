@@ -40,6 +40,7 @@
   background-image: url('grass.png');
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
 /* Actors need to move independent of the table */
