@@ -561,10 +561,10 @@ Player.prototype.update = function(time, state, keys) {
     
     // New position if move is successful
     let movedY;
-    movedY= pos.plus(new Vec(0, ySpeed * time * 0.25));
+    movedY= pos.plus(new Vec(0, ySpeed * time * 0.4));
     
     if (state.level.touches(movedY, this.size, "water")) {
-        movedY= pos.plus(new Vec(0, ySpeed * time * 0.25));
+        movedY= pos.plus(new Vec(0, ySpeed * time * 0.4));
     } else {
         movedY= pos.plus(new Vec(0, ySpeed * time));
     }
