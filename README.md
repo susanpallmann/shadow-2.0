@@ -1,6 +1,6 @@
 # unnamed-game
 
-**Version: 2.1**
+**Version: 2.2**
 
 Description to come eventually ¯\\\_(ツ)\_/¯
 
@@ -9,7 +9,8 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 ## Development Diary
 - [x] Follow basic platformer tutorial to completion - *2.0*
 - [x] Update player art - *2.1*
-- [ ] Experiment by adding "water" - *in progress*
+- [x] Experiment by adding "water" - *2.2*
+- [ ] Make a "coin" that gives the player a shark fin - *in progress*
 
 ## Planned Mechanics
 
