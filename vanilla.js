@@ -529,18 +529,18 @@ Player.prototype.update = function(time, state, keys) {
     
     // Adds or subtracts speed based on which key was pressed
     if (keys.ArrowLeft) {
-        let movedXTemp = pos.plus(new Vec((xSpeed -= 0.2*playerXSpeed) * time, 0));
+        let movedXTemp = pos.plus(new Vec((xSpeed -= 0.25*playerXSpeed) * time, 0));
         if (state.level.touches(movedXTemp, this.size, "water")) {
-            xSpeed -= 0.2*playerXSpeed;
+            xSpeed -= 0.25*playerXSpeed;
         } else {
             xSpeed -= playerXSpeed;
         }
         direction = "left";
     }
     if (keys.ArrowRight) {
-        let movedXTemp = pos.plus(new Vec((xSpeed += 0.2*playerXSpeed) * time, 0));
+        let movedXTemp = pos.plus(new Vec((xSpeed += 0.25*playerXSpeed) * time, 0));
         if (state.level.touches(movedXTemp, this.size, "water")) {
-            xSpeed += 0.2*playerXSpeed;
+            xSpeed += 0.25*playerXSpeed;
         } else {
             xSpeed += playerXSpeed;
         }
@@ -561,10 +561,10 @@ Player.prototype.update = function(time, state, keys) {
     
     // New position if move is successful
     let movedY;
-    movedY= pos.plus(new Vec(0, ySpeed * time * 0.5));
+    movedY= pos.plus(new Vec(0, ySpeed * time * 0.25));
     
     if (state.level.touches(movedY, this.size, "water")) {
-        movedY= pos.plus(new Vec(0, ySpeed * time * 0.5));
+        movedY= pos.plus(new Vec(0, ySpeed * time * 0.25));
     } else {
         movedY= pos.plus(new Vec(0, ySpeed * time));
     }
