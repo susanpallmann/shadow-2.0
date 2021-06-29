@@ -4,7 +4,8 @@
 
 Description to come eventually ¯\\\_(ツ)\_/¯
 
-*It has been **1** day since a typo broke everything.* 
+*It has been **2** days since a typo broke everything.* 
+(Please note that things have broken in this time, it just wasn't a typo.)
 
 ## Development Diary
 - [x] Follow basic platformer tutorial to completion - *2.0*
