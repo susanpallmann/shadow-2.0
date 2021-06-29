@@ -42,10 +42,6 @@
   background-repeat: no-repeat;
 }
 
-.grass:nth-child(2n) {
-  transform: rotateY(180deg);
-}
-
 /* Actors need to move independent of the table */
 .actor {
   position: absolute;
