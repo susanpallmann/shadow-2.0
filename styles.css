@@ -53,6 +53,7 @@
   background-image: url('coin.png');
   background-repeat: no-repeat;
   background-size: contain;
+  z-index: 2;
 }
 
 .player {
