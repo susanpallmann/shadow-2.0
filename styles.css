@@ -36,6 +36,13 @@
   background-repeat: no-repeat;
 }
 
+.water {
+  background-image: url('water.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
 .grass {
   background-image: url('grass.png');
   background-size: contain;
