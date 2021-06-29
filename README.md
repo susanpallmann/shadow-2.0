@@ -10,7 +10,7 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 - [x] Follow basic platformer tutorial to completion - *2.0*
 - [x] Update player art - *2.1*
 - [x] Experiment by adding "water" - *2.2*
-- [ ] Make a "coin" that gives the player a shark fin - *in progress*
+- [ ] Make a "coin" that gives the player a shark fin and faster swimming - *in progress*
 
 ## Planned Mechanics
 
