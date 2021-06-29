@@ -524,6 +524,12 @@ Player.prototype.update = function(time, state, keys) {
     // Stores new direction
     let direction = this.direction;
     
+    // Current position
+    let pos = this.pos;
+    
+    // New position if move is successful
+    let movedX = pos.plus(new Vec(xSpeed * time, 0));
+    
     // Adds or subtracts speed based on which key was pressed
     if (keys.ArrowLeft) {
         if (!state.level.touches(movedX, this.size, "water")) {
@@ -541,12 +547,7 @@ Player.prototype.update = function(time, state, keys) {
         }
         direction = "right";
     }
-    
-    // Current position
-    let pos = this.pos;
-    
-    // New position if move is successful
-    let movedX = pos.plus(new Vec(xSpeed * time, 0));
+
     
     // Checks if new position would collide with a wall
     if (!state.level.touches(movedX, this.size, "wall")) {
