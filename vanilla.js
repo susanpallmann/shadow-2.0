@@ -527,12 +527,10 @@ Player.prototype.update = function(time, state, keys) {
     // Current position
     let pos = this.pos;
     
-    // New position if move is successful
-    let movedX = pos.plus(new Vec(xSpeed * time, 0));
-    
     // Adds or subtracts speed based on which key was pressed
     if (keys.ArrowLeft) {
-        if (!state.level.touches(movedX, this.size, "water")) {
+        let movedXTemp = xSpeed -= 0.5*playerXSpeed;
+        if (!state.level.touches(movedXTemp, this.size, "water")) {
             xSpeed -= playerXSpeed;
         } else {
             xSpeed -= 0.5*playerXSpeed;   
@@ -540,7 +538,8 @@ Player.prototype.update = function(time, state, keys) {
         direction = "left";
     }
     if (keys.ArrowRight) {
-        if (!state.level.touches(movedX, this.size, "water")) {
+        let movedXTemp = xSpeed += 0.5*playerXSpeed;
+        if (!state.level.touches(movedXTemp, this.size, "water")) {
             xSpeed += playerXSpeed;
         } else {
             xSpeed -= 0.5*playerXSpeed;
@@ -548,6 +547,8 @@ Player.prototype.update = function(time, state, keys) {
         direction = "right";
     }
 
+    // New position if move is successful
+    let movedX = pos.plus(new Vec(xSpeed * time, 0));
     
     // Checks if new position would collide with a wall
     if (!state.level.touches(movedX, this.size, "wall")) {
@@ -560,10 +561,12 @@ Player.prototype.update = function(time, state, keys) {
     
     // New position if move is successful
     let movedY;
-    if (!state.level.touches(movedY, this.size, "water")) {
-        movedY= pos.plus(new Vec(0, ySpeed * time));
-    } else {
+    movedY= pos.plus(new Vec(0, ySpeed * time * 0.5));
+    
+    if (state.level.touches(movedY, this.size, "water")) {
         movedY= pos.plus(new Vec(0, ySpeed * time * 0.5));
+    } else {
+        movedY= pos.plus(new Vec(0, ySpeed * time));
     }
     
     // Checks if new position would collide with a wall
