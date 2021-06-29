@@ -53,7 +53,9 @@
 
 /* Coin styles */
 .coin {
-  background: rgb(241, 229, 89);
+  background-image: url('coin.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .player {
