@@ -41,6 +41,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 1;
+  position: relative;
 }
 
 .grass {
