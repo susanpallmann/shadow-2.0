@@ -16,6 +16,7 @@
 // = = sideways moving lava
 // v = dripping lava
 // | = up/down moving lava
+// ~ = water
 let gameLevels = [`                                                    
 ..................................................................###...........
 ...................................................##......##....##+##..........
@@ -26,8 +27,8 @@ let gameLevels = [`
 ..##......................................o.o................................#..
 ..#.....................o....................................................#..
 ..#..........****........................#####.............................o.#..
-..#..........####.......o....................................................#..
-..#..@..***..#..#.....***........................................#####.......#..
+..#..........####.......o...***..............................................#..
+..#..@..***..#..#...........###..................................#####.......#..
 ..############..###############...####################.....#######...#########..
 ..............................#...#..................#.....#....................
 ..............................#+++#..................#+++++#....................
@@ -322,7 +323,7 @@ Coin.prototype.size = new Vec(0.6, 0.6);
 // levelChars object maps plan characters to their respective roles
 // It's important that background items are strings, and actors are not
 const levelChars = {
-    ".": "empty", "#": "wall", "+": "lava",
+    ".": "empty", "#": "wall", "+": "lava", "~": "water",
     "@": Player, "o": Coin, "*": Grass,
     "=": Lava, "|": Lava, "v": Lava
 };
@@ -525,11 +526,19 @@ Player.prototype.update = function(time, state, keys) {
     
     // Adds or subtracts speed based on which key was pressed
     if (keys.ArrowLeft) {
-        xSpeed -= playerXSpeed;
+        if (!state.level.touches(movedX, this.size, "water")) {
+            xSpeed -= playerXSpeed;
+        } else {
+            xSpeed -= 0.5*playerXSpeed;   
+        }
         direction = "left";
     }
     if (keys.ArrowRight) {
-        xSpeed += playerXSpeed;
+        if (!state.level.touches(movedX, this.size, "water")) {
+            xSpeed += playerXSpeed;
+        } else {
+            xSpeed -= 0.5*playerXSpeed;
+        }
         direction = "right";
     }
     
@@ -549,7 +558,12 @@ Player.prototype.update = function(time, state, keys) {
     let ySpeed = this.speed.y + time * gravity;
     
     // New position if move is successful
-    let movedY = pos.plus(new Vec(0, ySpeed * time));
+    let movedY;
+    if (!state.level.touches(movedX, this.size, "water")) {
+        movedY= pos.plus(new Vec(0, ySpeed * time));
+    } else {
+        movedY= pos.plus(new Vec(0, ySpeed * time * 0.5));
+    }
     
     // Checks if new position would collide with a wall
     if (!state.level.touches(movedY, this.size, "wall")) {
