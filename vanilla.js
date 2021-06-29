@@ -529,7 +529,7 @@ Player.prototype.update = function(time, state, keys) {
     
     // Adds or subtracts speed based on which key was pressed
     if (keys.ArrowLeft) {
-        let movedXTemp = xSpeed -= 0.2*playerXSpeed;
+        let movedXTemp = pos.plus(new Vec((xSpeed -= 0.2*playerXSpeed) * time, 0));
         if (state.level.touches(movedXTemp, this.size, "water")) {
             xSpeed -= 0.2*playerXSpeed;
             console.log(xSpeed + ' touched water');
@@ -540,7 +540,7 @@ Player.prototype.update = function(time, state, keys) {
         direction = "left";
     }
     if (keys.ArrowRight) {
-        let movedXTemp = xSpeed += 0.2*playerXSpeed;
+        let movedXTemp = pos.plus(new Vec((xSpeed += 0.2*playerXSpeed) * time, 0));
         if (state.level.touches(movedXTemp, this.size, "water")) {
             xSpeed += 0.2*playerXSpeed;
             console.log(xSpeed + ' touched water');
