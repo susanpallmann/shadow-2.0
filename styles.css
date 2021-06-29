@@ -42,8 +42,8 @@
   background-repeat: no-repeat;
 }
 
-.grass[class*="int"] {
-  background-image: url('grass-blue.png');
+.grass::nth-child(2) {
+  transform: rotateY(180deg);
 }
 
 /* Actors need to move independent of the table */
