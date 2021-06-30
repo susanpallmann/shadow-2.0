@@ -445,7 +445,8 @@ Lava.prototype.collide = function(state) {
 Coin.prototype.collide = function(state) {
     let filtered = state.actors.filter(a => a != this);
     let status = state.status;
-    
+    let player = state.player;
+    player.back = 'shark';
     // Updates game state to "won" if that was the last coin
     if (!filtered.some(a => a.type === "coin")) status = "won";
     return new State(state.level, filtered, status);
