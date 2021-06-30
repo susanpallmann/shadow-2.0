@@ -17,6 +17,7 @@ Description to come eventually ¯\\\_(ツ)\_/¯
   - [ ] Adapt DOM player creation function to display the correct back slot
   - [ ] Create a new "coin" object
   - [ ] When player collides with the coin, change the player's back slot
+- [ ] Change from gifs to a spritemap
 
 ## Planned Mechanics
 
