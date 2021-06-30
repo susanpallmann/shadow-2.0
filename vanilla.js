@@ -207,7 +207,7 @@ class Vec {
 
 // Class to store player actor
 class Player {
-    constructor(pos, speed, direction) {
+    constructor(pos, speed, direction, slots = ['none', 'none', 'none', 'none', 'none']) {
 
         // Has position and speed properties
         // TODO: May want to add more properties down the road with evolution in mind,
@@ -215,6 +215,11 @@ class Player {
         this.pos = pos;
         this.speed = speed;
         this.direction = direction;
+        this.head = slots[0];
+        this.body = slots[1];
+        this.back = slots[2];
+        this.arms = slots[3];
+        this.feet = slots[4];
     }
 
     // This answers the level constructor's check for type
@@ -226,9 +231,9 @@ class Player {
     // TODO: I think this creates the player when the game is first started and isn't used again
     // Initial position is set to be 1/2 square unit above its starting place because the character 
     // is 1.5 units tall
-    static create(pos, direction) {
+    static create(pos, direction, slots) {
         return new Player(pos.plus(new Vec(0, -0.5)),
-                          new Vec(0, 0), direction);
+                          new Vec(0, 0), direction, slots);
     }
 }
 
@@ -521,8 +526,11 @@ Player.prototype.update = function(time, state, keys) {
     // Starts speed at 0
     let xSpeed = 0;
     
-    // Stores new direction
+    // Stores direction
     let direction = this.direction;
+    
+    // Stores current slots
+    let slots = this.slots;
     
     // Current position
     let pos = this.pos;
@@ -584,7 +592,7 @@ Player.prototype.update = function(time, state, keys) {
     } else {
         ySpeed = 0;
     }
-    return new Player(pos, new Vec(xSpeed, ySpeed), direction);
+    return new Player(pos, new Vec(xSpeed, ySpeed), direction, slots);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -703,7 +711,7 @@ function drawActors(actors) {
         let actorType = actor.type;
         let rect;
         if (actorType == "player") {
-            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`}, elt("div", {class: "back shark"}));
+            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`}, elt("div", {class: `back ${actor.slots[2]}`}));
         } else {
             rect = elt("div", {class: `actor ${actor.type}`});
         }
