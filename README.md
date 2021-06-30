@@ -13,8 +13,8 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 - [ ] Make a "coin" that gives the player a shark fin and faster swimming - *in progress*
   - [x] Draw shark back sprite
   - [X] Adapt DOM player creation function to have a "back slot" that lines up correctly
-  - [ ] Adapt Player class to have a new tracker for slots (maybe as an array)
-  - [ ] Adapt DOM player creation function to display the correct back slot
+  - [X] Adapt Player class to have a new tracker for slots (maybe as an array)
+  - [X] Adapt DOM player creation function to display the correct back slot
   - [ ] Create a new "coin" object
   - [ ] When player collides with the coin, change the player's back slot
 - [ ] Change from gifs to a spritemap and animating with time/steps rendering
