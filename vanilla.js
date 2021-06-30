@@ -215,11 +215,11 @@ class Player {
         this.pos = pos;
         this.speed = speed;
         this.direction = direction;
-        this.head = slots[0];
-        this.body = slots[1];
-        this.back = slots[2];
-        this.arms = slots[3];
-        this.feet = slots[4];
+        this.head = head;
+        this.body = body;
+        this.back = back;
+        this.arms = arms;
+        this.feet = feet;
     }
 
     // This answers the level constructor's check for type
