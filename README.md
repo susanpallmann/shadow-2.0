@@ -1,22 +1,23 @@
 # unnamed-game
 
-**Version: 2.2**
+**Version: 0.3.0**
 
 Description to come eventually ¯\\\_(ツ)\_/¯
 
 *It has been **3** days since a typo broke everything.* 
 
 ## Development Diary
-- [x] Follow basic platformer tutorial to completion - *2.0*
-- [x] Update player art - *2.1*
-- [x] Experiment by adding "water" - *2.2*
-- [ ] Make a "coin" that gives the player a shark fin and faster swimming - *in progress*
+- [x] Follow basic platformer tutorial to completion - *0.2.0*
+- [x] Update player art - *0.2.1*
+- [x] Experiment by adding "water" - *0.2.2*
+- [X] Make a "coin" that gives the player a shark fin and faster swimming - *0.3.0*
   - [x] Draw shark back sprite
   - [X] Adapt DOM player creation function to have a "back slot" that lines up correctly
   - [X] Adapt Player class to have a new tracker for slots (maybe as an array)
   - [X] Adapt DOM player creation function to display the correct back slot
-  - [ ] When player collides with the coin, change the player's back slot
-  - [ ] When player has shark back, make player swim faster
+  - [X] When player collides with the coin, change the player's back slot
+  - [X] When player has shark back, make player swim faster
+- [ ] Create first monster - *in progress*
 - [ ] Change from gifs to a spritemap and animating with time/steps rendering
 
 ## Planned Mechanics
