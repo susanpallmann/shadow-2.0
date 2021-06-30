@@ -517,7 +517,7 @@ Grass.prototype.update = function(time) {
 
 // Starting with some constants for player speed/gravity/etc.
 // TODO: We might want to change these later so they aren't constants given planned game mechanics
-const playerXSpeed = 7;
+const playerXSpeed = 4;
 const gravity = 30;
 const jumpSpeed = 14;
 
