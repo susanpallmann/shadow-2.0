@@ -83,6 +83,15 @@
   transform: rotateY(0deg);
 }
 
+.player .back.shark {
+  height: 100%;
+  width: 24px;
+  margin-left: -14px;
+  position: absolute;
+  background-image: url('back-shark.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
 
 /* Normal Styles */
 :root {
