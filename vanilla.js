@@ -711,7 +711,7 @@ function drawActors(actors) {
         let actorType = actor.type;
         let rect;
         if (actorType == "player") {
-            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`}, elt("div", {class: `back ${actor.slots[2]}`}));
+            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`}, elt("div", {class: `back ${actor.back}`}));
         } else {
             rect = elt("div", {class: `actor ${actor.type}`});
         }
