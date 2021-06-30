@@ -629,6 +629,14 @@ const arrowKeys =
 // TODO: May want to expand this to do other things later since lava isn't an endgame goal
 State.prototype.update = function(time, keys) {
     
+    let player =  this.player;
+    
+    // Checks if player is touching lava
+    if (this.level.touches(player.pos, player.size, "lava")) {
+        // If so, new State is "lost"
+        return new State(this.level, actors, "lost");
+    }
+    
     // Regenerating our list of actors, getting current state, getting current level
     let actors = this.actors
         .map(actor => actor.update(time, this, keys));
@@ -636,14 +644,6 @@ State.prototype.update = function(time, keys) {
     
     // If we're not playing, return whatever our current status is
     if (newState.status != "playing") return newState;
-    
-    let player =  newState.player;
-    
-    // Checks if player is touching lava
-    if (this.level.touches(player.pos, player.size, "lava")) {
-        // If so, new State is "lost"
-        return new State(this.level, actors, "lost");
-    }
     
     // For each actor
     for (let actor of actors) {
