@@ -12,7 +12,7 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 - [x] Experiment by adding "water" - *2.2*
 - [ ] Make a "coin" that gives the player a shark fin and faster swimming - *in progress*
   - [x] Draw shark back sprite
-  - [ ] Adapt DOM player creation function to have a "back slot" that lines up correctly
+  - [X] Adapt DOM player creation function to have a "back slot" that lines up correctly
   - [ ] Adapt Player class to have a new tracker for slots (maybe as an array)
   - [ ] Adapt DOM player creation function to display the correct back slot
   - [ ] Create a new "coin" object
