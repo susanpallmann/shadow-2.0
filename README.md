@@ -15,8 +15,8 @@ Description to come eventually ¯\\\_(ツ)\_/¯
   - [X] Adapt DOM player creation function to have a "back slot" that lines up correctly
   - [X] Adapt Player class to have a new tracker for slots (maybe as an array)
   - [X] Adapt DOM player creation function to display the correct back slot
-  - [ ] Create a new "coin" object
   - [ ] When player collides with the coin, change the player's back slot
+  - [ ] When player has shark back, make player swim faster
 - [ ] Change from gifs to a spritemap and animating with time/steps rendering
 
 ## Planned Mechanics
