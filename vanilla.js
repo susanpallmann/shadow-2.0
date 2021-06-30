@@ -703,12 +703,7 @@ function drawActors(actors) {
         let actorType = actor.type;
         let rect;
         if (actorType == "player") {
-            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`},
-                       function() {
-                           let childRect = elt("div", {class: 'back-slot'});
-                           return childRect;
-                       }
-                   );
+            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`}, ...actor.map(actor.type => elt("div", {class: "test"})));
         } else {
             rect = elt("div", {class: `actor ${actor.type}`});
         }
