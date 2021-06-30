@@ -703,7 +703,9 @@ function drawActors(actors) {
         let actorType = actor.type;
         let rect;
         if (actorType == "player") {
-            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`});
+            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`},
+                       elt("div", {class: 'back-slot'});
+                   );
         } else {
             rect = elt("div", {class: `actor ${actor.type}`});
         }
