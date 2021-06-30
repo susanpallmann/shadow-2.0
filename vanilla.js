@@ -220,6 +220,7 @@ class Player {
         this.back = slots[2];
         this.arms = slots[3];
         this.feet = slots[4];
+        this.slots = [this.head, this.body, this.back, this.arms, this.feet];
     }
 
     // This answers the level constructor's check for type
