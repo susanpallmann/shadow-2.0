@@ -207,7 +207,7 @@ class Vec {
 
 // Class to store player actor
 class Player {
-    constructor(pos, speed, direction, slots = ['none', 'none', 'none', 'none', 'none']) {
+    constructor(pos, speed, direction, head = 'none', body = 'none', back = 'none', arms = 'none', feet = 'none') {
 
         // Has position and speed properties
         // TODO: May want to add more properties down the road with evolution in mind,
@@ -220,7 +220,6 @@ class Player {
         this.back = slots[2];
         this.arms = slots[3];
         this.feet = slots[4];
-        this.slots = [this.head, this.body, this.back, this.arms, this.feet];
     }
 
     // This answers the level constructor's check for type
@@ -232,9 +231,9 @@ class Player {
     // TODO: I think this creates the player when the game is first started and isn't used again
     // Initial position is set to be 1/2 square unit above its starting place because the character 
     // is 1.5 units tall
-    static create(pos, direction, slots) {
+    static create(pos, direction, head, body, back, arms, feet) {
         return new Player(pos.plus(new Vec(0, -0.5)),
-                          new Vec(0, 0), direction, slots);
+                          new Vec(0, 0), direction, head, body, back, arms, feet);
     }
 }
 
@@ -532,7 +531,11 @@ Player.prototype.update = function(time, state, keys) {
     let direction = this.direction;
     
     // Stores current slots
-    let slots = this.slots;
+    let head = this.head;
+    let body = this.body;
+    let back = this.back;
+    let arms = this.arms;
+    let feet = this.feet;
     
     // Current position
     let pos = this.pos;
@@ -594,7 +597,7 @@ Player.prototype.update = function(time, state, keys) {
     } else {
         ySpeed = 0;
     }
-    return new Player(pos, new Vec(xSpeed, ySpeed), direction, slots);
+    return new Player(pos, new Vec(xSpeed, ySpeed), direction, head, body, back, arms, feet);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
