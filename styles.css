@@ -83,6 +83,16 @@
   transform: rotateY(0deg);
 }
 
+.player .back {
+  height: 100%;
+  width: 24px;
+  margin-left: -16px;
+  position: absolute;
+  background-image: none;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
 .player .back.shark {
   height: 100%;
   width: 24px;
