@@ -254,7 +254,7 @@ class Shark {
     }
     
     static create(pos, speed, direction) {
-        return new Player(pos.plus(new Vec(0, -0.5)),
+        return new Shark(pos.plus(new Vec(0, -0.5)),
                           new Vec(0,0), direction);
     }
 }
