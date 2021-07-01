@@ -684,6 +684,15 @@ Shark.prototype.update = function(time, state) {
     if (!state.level.touches(newPos, this.size, "wall")) {
         let testPos = newPos.plus(new Vec(0, 1));
         if (!state.level.touches(newPos.plus(new Vec(0.25, 1)), this.size, "wall") && !state.level.touches(newPos.plus(new Vec(-0.25, 1)), this.size, "wall")) {
+            if (direction = "left") {
+                direction = "right";
+                xSpeed = sharkXSpeed;
+                pos = pos.plus(new Vec(xSpeed * time, 0));
+            } else {
+                direction = "left";
+                xSpeed = sharkXSpeed;
+                pos = pos.plus(new Vec(-xSpeed * time, 0));
+            }
         } else {
             pos = newPos;
         }
