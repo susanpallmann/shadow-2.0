@@ -680,6 +680,7 @@ Shark.prototype.update = function(time, state) {
             newPos = pos.plus(new Vec(xSpeed * time, 0));
             break;
     }
+    pos = newPos;
     
     if (!state.level.touches(newPos, this.size, "wall")) {
         let testPos = newPos.plus(new Vec(0, 1));
