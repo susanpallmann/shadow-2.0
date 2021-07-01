@@ -653,8 +653,8 @@ Shark.prototype.update = function(time, state) {
         case 7:
         case 8:
             if (direction = "left") {
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(-xSpeed * time, 0));
+                xSpeed = -sharkXSpeed;
+                newPos = pos.plus(new Vec(xSpeed * time, 0));
             } else {
                 xSpeed = sharkXSpeed;
                 newPos = pos.plus(new Vec(xSpeed * time, 0));
@@ -667,8 +667,8 @@ Shark.prototype.update = function(time, state) {
                 newPos = pos.plus(new Vec(xSpeed * time, 0));
             } else {
                 direction = "left";
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(-xSpeed * time, 0));
+                xSpeed = -sharkXSpeed;
+                newPos = pos.plus(new Vec(xSpeed * time, 0));
             }
             break;
         case 10:
@@ -691,8 +691,8 @@ Shark.prototype.update = function(time, state) {
                 newPos = pos.plus(new Vec(xSpeed * time, 0));
             } else {
                 direction = "left";
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(-xSpeed * time, 0));
+                xSpeed = -sharkXSpeed;
+                newPos = pos.plus(new Vec(xSpeed * time, 0));
             }
             pos = newPos;
         } else {
@@ -702,8 +702,8 @@ Shark.prototype.update = function(time, state) {
                 newPos = pos.plus(new Vec(xSpeed * time, 0));
             } else {
                 direction = "left";
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(-xSpeed * time, 0));
+                xSpeed = -sharkXSpeed;
+                newPos = pos.plus(new Vec(xSpeed * time, 0));
             }
             pos = newPos;
         }
