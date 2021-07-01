@@ -259,7 +259,7 @@ class Shark {
     }
 }
 
-Shark.prototype.size = new Vec(0.75, 1.5);
+Shark.prototype.size = new Vec(0.84, 1.5);
 
 // Class to store lava actors (keeping in mind they can behave in three different ways
 class Lava {
