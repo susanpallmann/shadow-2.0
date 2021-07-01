@@ -625,91 +625,9 @@ Player.prototype.update = function(time, state, keys) {
     return new Player(pos, new Vec(xSpeed, ySpeed), direction, head, body, back, arms, feet);
 }
 
-const sharkXSpeed = 5;
-
 // Updates player based on key presses currently registered
 Shark.prototype.update = function(time, state) {
-    
-    // Starts speed at 0
-    let xSpeed = 0;
-    
-    // Stores direction
-    let direction = this.direction;
-    
-    // Current position
-    let pos = this.pos;
-    
-    let random = Math.floor(Math.random() * 10) + 1;
-    
-    let newPos = this.pos;
-    
-    switch(random) {
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-            if (direction = "left") {
-                xSpeed = -sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            } else {
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            }
-            break;
-        case 9:
-            if (direction = "left") {
-                direction = "right";
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            } else {
-                direction = "left";
-                xSpeed = -sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            }
-            break;
-        case 10:
-            xSpeed = 0;
-            newPos = pos.plus(new Vec(xSpeed * time, 0));
-            break;
-        default:
-            xSpeed = 0;
-            newPos = pos.plus(new Vec(xSpeed * time, 0));
-            break;
-    }
-    pos = newPos;
-    
-    if (!state.level.touches(newPos, this.size, "wall")) {
-        let testPos = newPos.plus(new Vec(0, 1));
-        if (!state.level.touches(newPos.plus(new Vec(0, 1)), this.size, "wall") && !state.level.touches(newPos.plus(new Vec(0, 1)), this.size, "wall")) {
-            if (direction = "left") {
-                direction = "right";
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            } else {
-                direction = "left";
-                xSpeed = -sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            }
-            pos = newPos;
-        } else {
-            if (direction = "left") {
-                direction = "right";
-                xSpeed = sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            } else {
-                direction = "left";
-                xSpeed = -sharkXSpeed;
-                newPos = pos.plus(new Vec(xSpeed * time, 0));
-            }
-            pos = newPos;
-        }
-    }
-    
-    return new Shark(pos, new Vec(xSpeed, 0), direction);
+    return new Shark(this.pos, this.speed, this.direction);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
