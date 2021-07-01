@@ -474,7 +474,7 @@ Coin.prototype.collide = function(state) {
 Shark.prototype.collide = function(state) {
     let status = state.status;
     state.player.back = 'shark';
-    return new State(state.level, filtered, status);
+    return new State(state.level, state.actors, status);
 }
 
 // If player walks through grass, console log for now TODO: change this
