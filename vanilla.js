@@ -683,7 +683,7 @@ Shark.prototype.update = function(time, state) {
     
     if (!state.level.touches(newPos, this.size, "wall")) {
         let testPos = newPos.plus(new Vec(0, 1));
-        if (!state.level.touches(newPos.plus(new Vec(1, 1)), this.size, "wall") && !state.level.touches(newPos.plus(new Vec(-1, 1)), this.size, "wall")) {
+        if (!state.level.touches(newPos.plus(new Vec(0.25, 1)), this.size, "wall") && !state.level.touches(newPos.plus(new Vec(-0.25, 1)), this.size, "wall")) {
         } else {
             pos = newPos;
         }
