@@ -71,6 +71,13 @@
   background-position: 50% 100%;
 }
 
+.actor.shark {
+  background-image: url('monster-shark.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
+}
+
 .actor.left {
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
