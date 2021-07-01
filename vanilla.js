@@ -650,6 +650,8 @@ Shark.prototype.update = function(time, state) {
         case 4:
         case 5:
         case 6:
+        case 7:
+        case 8:
             if (direction = "left") {
                 xSpeed = sharkXSpeed;
                 newPos = pos.plus(new Vec(-xSpeed * time, 0));
@@ -658,8 +660,6 @@ Shark.prototype.update = function(time, state) {
                 newPos = pos.plus(new Vec(xSpeed * time, 0));
             }
             break;
-        case 7:
-        case 8:
         case 9:
             if (direction = "left") {
                 direction = "right";
@@ -683,7 +683,7 @@ Shark.prototype.update = function(time, state) {
     
     if (!state.level.touches(newPos, this.size, "wall")) {
         let testPos = newPos.plus(new Vec(0, 1));
-        if (!state.level.touches(newPos.plus(new Vec(0.5, 1)), this.size, "wall") && !state.level.touches(newPos.plus(new Vec(-0.5, 1)), this.size, "wall")) {
+        if (!state.level.touches(newPos.plus(new Vec(1, 1)), this.size, "wall") && !state.level.touches(newPos.plus(new Vec(-1, 1)), this.size, "wall")) {
         } else {
             pos = newPos;
         }
