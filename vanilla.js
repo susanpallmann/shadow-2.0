@@ -349,7 +349,7 @@ Coin.prototype.size = new Vec(0.6, 0.6);
 // It's important that background items are strings, and actors are not
 const levelChars = {
     ".": "empty", "#": "wall", "+": "lava", "~": "water",
-    "@": Player, "o": Coin, "*": Grass, "S": Shark
+    "@": Player, "o": Coin, "*": Grass, "S": Shark,
     "=": Lava, "|": Lava, "v": Lava
 };
 
