@@ -27,7 +27,7 @@ let gameLevels = [`
 ............................................................................##..
 ..##......................................o.o................................#..
 ..#.....................o....................................................#..
-..#..........****........................#####.............................o.#..
+..#..........*S**........................#####.............................o.#..
 ..#..........####.......o...***..............................................#..
 ..#..@..***..#..#~~~~~~~~~~~###..................................#####.......#..
 ..############..###############...####################.....#######...#########..
@@ -208,7 +208,7 @@ class Vec {
 
 // Class to store player actor
 class Player {
-    constructor(pos, speed, direction, head = 'none', body = 'none', back = 'none', arms = 'none', feet = 'none') {
+    constructor(pos, speed, direction = 'right', head = 'none', body = 'none', back = 'none', arms = 'none', feet = 'none') {
 
         // Has position and speed properties
         // TODO: May want to add more properties down the road with evolution in mind,
@@ -241,6 +241,25 @@ class Player {
 // Since size isn't changing, we're storing this on the prototype rather than the instance
 // TODO: May need to change this if game mechanics decide to change size
 Player.prototype.size = new Vec(0.6, 1.5);
+
+class Shark {
+    constructor(pos, speed, direction = 'left') {
+        this.pos = pos;
+        this.speed = speed;
+        this.direction = direction;
+    }
+    
+    get type() {
+        return "shark"
+    }
+    
+    static create(pos, speed, direction) {
+        return new Player(pos.plus(new Vec(0, -0.5)),
+                          new Vec(0,0), direction);
+    }
+}
+
+Shark.prototype.size = new Vec(0.6, 1.5);
 
 // Class to store lava actors (keeping in mind they can behave in three different ways
 class Lava {
@@ -330,7 +349,7 @@ Coin.prototype.size = new Vec(0.6, 0.6);
 // It's important that background items are strings, and actors are not
 const levelChars = {
     ".": "empty", "#": "wall", "+": "lava", "~": "water",
-    "@": Player, "o": Coin, "*": Grass,
+    "@": Player, "o": Coin, "*": Grass, "S": Shark
     "=": Lava, "|": Lava, "v": Lava
 };
 
@@ -446,10 +465,15 @@ Lava.prototype.collide = function(state) {
 Coin.prototype.collide = function(state) {
     let filtered = state.actors.filter(a => a != this);
     let status = state.status;
-    state.player.back = 'shark';
     
     // Updates game state to "won" if that was the last coin
     if (!filtered.some(a => a.type === "coin")) status = "won";
+    return new State(state.level, filtered, status);
+}
+
+Shark.prototype.collide = function(state) {
+    let status = state.status;
+    state.player.back = 'shark';
     return new State(state.level, filtered, status);
 }
 
@@ -601,6 +625,73 @@ Player.prototype.update = function(time, state, keys) {
     return new Player(pos, new Vec(xSpeed, ySpeed), direction, head, body, back, arms, feet);
 }
 
+const sharkXSpeed = 5;
+
+// Updates player based on key presses currently registered
+Shark.prototype.update = function(time, state) {
+    
+    // Starts speed at 0
+    let xSpeed = 0;
+    
+    // Stores direction
+    let direction = this.direction;
+    
+    // Current position
+    let pos = this.pos;
+    
+    let random = Math.floor(Math.random() * 10) + 1;
+    
+    let newPos = this.pos;
+    
+    switch(random) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            if (direction = "left") {
+                xSpeed = sharkXSpeed;
+                newPos = pos.plus(new Vec(-xSpeed * time, 0));
+            } else {
+                xSpeed = sharkXSpeed;
+                newPos = pos.plus(new Vec(xSpeed * time, 0));
+            }
+            break;
+        case 7:
+        case 8:
+        case 9:
+            if (direction = "left") {
+                direction = "right";
+                xSpeed = ;
+                newPos = pos.plus(new Vec(xSpeed * time, 0));
+            } else {
+                direction = "left";
+                xSpeed = ;
+                newPos = pos.plus(new Vec(-xSpeed * time, 0));
+            }
+            break;
+        case 10:
+            xSpeed = 0;
+            newPos = pos.plus(new Vec(xSpeed * time, 0));
+            break;
+        default:
+            xSpeed = 0;
+            newPos = pos.plus(new Vec(xSpeed * time, 0));
+            break;
+    }
+    
+    if (!state.level.touches(newPos, this.size, "wall")) {
+        let testPos = newPos.plus(new Vec(0, 1));
+        if (!state.level.touches(testPos, this.size, "wall")) {
+        } else {
+            pos = newPos;
+        }
+    }
+    
+    return new Shark(pos, new Vec(xSpeed, 0), direction);
+}
+
 /* -------------------------------------------------------------------------------------------------- */
 // Key tracking for player movement
 // BEGIN KEY TRACKING
@@ -718,6 +809,8 @@ function drawActors(actors) {
         let rect;
         if (actorType == "player") {
             rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`}, elt("div", {class: `back ${actor.back}`}));
+        } else if (actorType == "shark") {
+            rect = elt("div", {class: `actor ${actor.type} ${actor.direction}`});
         } else {
             rect = elt("div", {class: `actor ${actor.type}`});
         }
