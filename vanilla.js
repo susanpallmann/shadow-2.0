@@ -663,11 +663,11 @@ Shark.prototype.update = function(time, state) {
         case 9:
             if (direction = "left") {
                 direction = "right";
-                xSpeed = ;
+                xSpeed = sharkXSpeed;
                 newPos = pos.plus(new Vec(xSpeed * time, 0));
             } else {
                 direction = "left";
-                xSpeed = ;
+                xSpeed = sharkXSpeed;
                 newPos = pos.plus(new Vec(-xSpeed * time, 0));
             }
             break;
