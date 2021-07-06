@@ -121,7 +121,7 @@ Mapping relies on single-letter/digit characters.
 Character | Sprite Name | File Path
 ----------|-------------|-------------------
 0         |Air          |N/A
-1         |Grass        |sprites/blocks/grass.png
+1         |Grass        |sprites/blocks/ground.png
 2         |Dirt         |N/A
 3         |Water        |sprites/blocks/water.png
 5         |Lava         |N/A
