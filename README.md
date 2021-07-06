@@ -40,18 +40,12 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 #### Head
 Ability           | Appearance
 ------------------|-------------------
-increased attack  | * bull horns
-                    * rhinoceros horn
-  - bull horns
-  - rhinoceros horn
-- increased breath
-  - shark gills
-- fire breath
-  - lizard head
-- tongue attack
-  - frog head
-- glow
-  - angler fish antenna
+increased attack  |bull horns
+increased attack  |rhinoceros horn
+increased breath  |shark gills
+fire breath       |lizard head
+tongue attack     |frog head
+glow              |angler fish antenna
 
 #### Body
 - increased defense
