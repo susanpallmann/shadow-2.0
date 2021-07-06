@@ -4,7 +4,7 @@
 
 Description to come eventually ¯\\\_(ツ)\_/¯
 
-*It has been **3** days since a typo broke everything.* 
+*It has been **8** days since a typo broke everything. 5 of those days I was on vacation.* 
 
 ## Development Diary
 - [x] Follow basic platformer tutorial to completion - *0.2.0*
