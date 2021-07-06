@@ -17,8 +17,9 @@ Description to come eventually ¯\\\_(ツ)\_/¯
   - [X] Adapt DOM player creation function to display the correct back slot
   - [X] When player collides with the coin, change the player's back slot
   - [X] When player has shark back, make player swim faster
-- [ ] Create first monster - *in progress*
+- [ ] Rework level creation to use both a block map (physics) and a sprite map (visuals) - *in progress*
 - [ ] Change from gifs to a spritemap and animating with time/steps rendering
+- [ ] Create first monster
 
 ## Planned Mechanics
 
