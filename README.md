@@ -48,57 +48,45 @@ tongue attack     |frog head
 glow              |angler fish antenna
 
 #### Body
-- increased defense
-  - rhino skin
-- increased inventory
-  - kangaroo pouch
-- does damage when attacked
-  - poison dart frog skin
-- invisibility (no aggro from monsters)
-  - squid skin
+Ability                   | Appearance
+--------------------------|-------------------
+increased defense         |rhino skin
+increased inventory       |kangaroo pouch
+does damage when attacked |poison dart frog skin
+invisibility              |squid skin
 
 #### Back
-- increased swimming speed
-  - shark fin
-- increased defense
-  - hermit crab shell
-  - turtle shell
-- increased inventory
-  - camel hump
-- reduced fall damage
-  - hermit crab shell
-  - turtle shell
-- does damage when attacked
-  - porcupine spines
-  - lionfish spines
+Ability                   | Appearance
+--------------------------|-------------------
+increased swimming speed  |shark fin
+increased defense         |hermit crab shell
+increased defense         |turtle shell
+increased inventory       |camel hump
+reduced fall damage       |hermit crab shell
+reduced fall damage       |turtle shell
+does damage when attacked |porcupine spines
+does damage when attacked |lionfish spines
 
 #### Arms
-- increased swimming speed
-  - lionfish fins
-- increased break strength
-  - lobster claws
-- climb walls
-  - squid arms
+Ability                   | Appearance
+--------------------------|-------------------
+increased swimming speed  |lionfish fins
+increased break strength  |lobster claws
+climb walls               |squid arms
 
 #### Legs
-- decreased walking speed
-  - sloth legs
-- decreased jump height
-  - sloth legs
-- increased walking speed
-  - cheetah legs
-  - deer legs
-- increased jump height
-  - frog legs
-  - kangaroo legs
-- increased swimming speed
-  - dolphin tail
-- climb walls
-  - lobster legs
-- climb ceilings
-  - lobster legs
-- ink attack
-  - squid legs
+Ability                   | Appearance
+--------------------------|-------------------
+decreased walking speed   |sloth legs
+decreased jump height     |sloth legs
+increased walking speed   |cheetah legs
+increased walking speed   |deer legs
+increased jump height     |frog legs
+increased jump height     |kangaroo legs
+increased swimming speed  |dolphin tail
+climb walls               |lobster legs
+climb ceilings            |lobster legs
+ink attack                |squid legs
 
 ## Documentation
 
