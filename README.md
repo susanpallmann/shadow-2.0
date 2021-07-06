@@ -40,7 +40,7 @@ loses their sentience and by extension, the game.
 
 There are five adaptation slots: head, body, back, arms, and legs. Some traits
 can be adapted to more than one slot, allowing the player to be strategic in
-how they acquire specific traits, and which slots they may need to keep open.
+how they acquire specific traits based on which slots they may need to keep open.
 
 
 #### Head
