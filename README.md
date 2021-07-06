@@ -111,6 +111,13 @@ interesting looking map without having to create lots of blocks that use the sam
 physics and behaviors.
 
 #### Blocks
+Character | Block Name | Description
+----------|------------|---------------------------
+.         | Air        |Empty, doesn't interact with anything.
+\#        | Wall       |Solid block, stops movement upon collision.
+\+        | Lava       |Ends the game when player collides.    
+~         | Water      |Slows the player's jump and run speed.
+
 
 #### Sprites
 
@@ -118,13 +125,13 @@ physics and behaviors.
 
 Mapping relies on single-letter/digit characters.
 
-Character | Sprite Name | File Path
-----------|-------------|-------------------
-0         |Air          |N/A
-1         |Grass        |sprites/blocks/ground.png
-2         |Dirt         |N/A
-3         |Water        |sprites/blocks/water.png
-5         |Lava         |N/A
+Character | Sprite Name | Block | File Path
+----------|-------------|-------|--------------------------
+0         |Air          |.      |N/A
+1         |Grass        |\#     |sprites/blocks/ground.png
+2         |Dirt         |\#     |N/A
+3         |Water        |~      |sprites/blocks/water.png
+5         |Lava         |\+     |N/A
 
 
 #### Map
