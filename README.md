@@ -30,12 +30,17 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 ## Planned Mechanics
 
 ### Learnable Adaptations
-*The concept of the game is that the player, by spending time near monsters 
+The core concept of the game is that the player, by spending time near monsters 
 and creatures in the game, can gain adaptations or traits from these monsters.
 The player then uses these adaptations - things like faster swimming or higher
 jumping ability - to navigate through the game world. However, the player must
 be careful when adapting - if all 5 adaptation slots are filled the player
-loses their sentience and by extension, the game.*
+loses their sentience and by extension, the game.
+
+
+There are five adaptation slots: head, body, back, arms, and legs. Some traits
+can be adapted to more than one slot, allowing the player to be strategic in
+how they acquire specific traits, and which slots they may need to keep open.
 
 
 #### Head
