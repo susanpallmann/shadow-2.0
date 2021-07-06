@@ -96,3 +96,8 @@ Description to come eventually ¯\\\_(ツ)\_/¯
   - lobster legs
 - ink attack
   - squid legs
+
+## Documentation
+
+### Map Creation
+Coming soon
