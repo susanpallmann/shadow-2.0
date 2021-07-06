@@ -38,7 +38,10 @@ Description to come eventually ¯\\\_(ツ)\_/¯
 
 
 #### Head
-- increased attack
+Ability           | Appearance
+------------------|-------------------
+increased attack  | * bull horns
+                    * rhinoceros horn
   - bull horns
   - rhinoceros horn
 - increased breath
