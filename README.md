@@ -97,4 +97,35 @@ ink attack                |squid legs
 ## Documentation
 
 ### Map Creation
-Coming soon
+
+The current plan for map creation is to use a long JS string to build the map.
+The first thing the interpreter does is identify the actors and replace those
+with the air character in the original string. Actors are given their own array.
+The level interpreter will take this string and loop through the ASCII characters
+interpreting the expected sprite, and then create another array with the physical
+properties. In the end there will be two strings, or matrices of strings, where the
+two represent a block map and a sprite map. The block map dictates the behavior 
+of specific coordinates of the map, and the sprite map tells the game what sprite 
+to display in specific coordinates. This design makes it possible to have a more 
+interesting looking map without having to create lots of blocks that use the same 
+physics and behaviors.
+
+#### Blocks
+
+#### Sprites
+
+##### ASCII Legend
+
+Mapping relies on single-letter/digit characters.
+
+Character | Sprite Name | File Path
+----------|-------------|-------------------
+0         |Air          |N/A
+1         |Grass        |sprites/blocks/grass.png
+2         |Dirt         |N/A
+3         |Water        |sprites/blocks/water.png
+5         |Lava         |N/A
+
+
+#### Map
+
