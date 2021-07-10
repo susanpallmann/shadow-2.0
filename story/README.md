@@ -35,7 +35,9 @@ at minimum a trade/equipment opportunity. Most likely also some form of healing 
 
 *Currently undetermined is how the player's ability to adapt gets discovered.*
 
-*Need to think through how the player is tasked with their mission.*
+*Need to think through how the player is tasked with their mission. An early thought is to task
+the player with bringing some kind of supply to another pure human encampment. This might also
+be how we introduce monsters and the adaptation ability, honestly... Need to decide.*
 
 When the player leaves the settlement, the player sees a large radiation warning, and is 
 introduced to settlement entry for the first time, either seeing a guard at the gate, or
@@ -44,7 +46,19 @@ will only let in "genetically clean" humans. The player is also at this point in
 the game world, which should be in stark contrast to the sterile environment they just emerged
 from. Plant life should be everywhere, the world should feel very much alive, and this 
 appearance should be validated when the player begins to venture into the world and sees the
-world respond to its movements.
+world qctively react to its movements.
+
+As the player ventures out, I would really like to subtly hint at the fallout that took place,
+maybe by having the remains of some modern-day objects hidden in the scenery. Subtle is key, 
+though. I am more interested in having this feel like a new world than mourning the old one.
+
+This might not belong here in the timeline, but it's worth mentioning: I almost want some
+keystone-like shrines with abilities. While this is a sci-fi concept and not fantasy, I feel
+like there is room to create a radioactive leftover tech piece that can act aesthetically and
+functionally as a runestone or something. And in general, I want to look for opportunities to
+make the modern and technological feel like a weird sort of magic. I feel like I won't know
+what I'm talking about here if I read this tomorrow. Oh well.
+
 
 
 
