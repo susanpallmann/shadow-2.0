@@ -29,9 +29,17 @@ explain that they found the player outside the boundaries of their camp and were
 to find the player "unaffected". (OPTIONAL: One remarks that the player must have been quite
 hurt as their face looked kind of like a monster's at first. "You must have healed quickly!")
 
-The player is shown around the human encampment (which could also act as a tutorial).
+The player is shown around the human encampment (which could also act as a tutorial). This
+story process should introduce whatever common mechanics will be found in all settlements,
+at minimum a trade/equipment opportunity. Most likely also some form of healing station?
 
-Currently undetermined is how the player's ability to adapt gets discovered.
+*Currently undetermined is how the player's ability to adapt gets discovered.*
+
+*Need to think through how the player is tasked with their mission.*
+
+When the player leaves the settlement
+  
+
 
 ## Surprises
 
@@ -73,3 +81,7 @@ that this can be an opportunity for a mystery the player might uncover if I so c
 
 I do think either way that there should be scraps of books or something similar to sort of clue
 the player in on what happened.
+
+## Current inconsistencies
+* I think my original idea was to have the player have come from space, which is why they're
+drawn in an astronaut suit.
