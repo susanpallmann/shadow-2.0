@@ -56,8 +56,13 @@ This might not belong here in the timeline, but it's worth mentioning: I almost 
 keystone-like shrines with abilities. While this is a sci-fi concept and not fantasy, I feel
 like there is room to create a radioactive leftover tech piece that can act aesthetically and
 functionally as a runestone or something. And in general, I want to look for opportunities to
-make the modern and technological feel like a weird sort of magic. I feel like I won't know
-what I'm talking about here if I read this tomorrow. Oh well.
+make the modern and technological feel like a weird and ancient sort of magic. This doesn't 
+even have to be crazy - a lot has changed and that technology may very well *be* ancient now.
+
+Along the way to the next human settlement, the player will test out their adaption ability for
+the first time to solve some minor roadblock. This can be something simple like getting frog
+legs to jump over a boulder. We don't want to overwhelm the player yet, as the mechanic of 
+absorbing abilites and letting them cool down is going to be a little complex as it is.
 
 
 
