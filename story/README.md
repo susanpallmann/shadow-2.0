@@ -21,9 +21,21 @@ Time passed between the nuclear event and the start of the game still needs to b
 To inform this, though, I'm currently envisioning the world as rather overgrown, with little
 evidence of civilization prior to the nuclear event.
 
+## Player POV Timeline
+
+### Exposition
+The player wakes up in a human camp, surrounded by human NPCs in hazmat suits. The humans 
+explain that they found the player outside the boundaries of their camp and were surprised
+to find the player "unaffected". (OPTIONAL: One remarks that the player must have been quite
+hurt as their face looked kind of like a monster's at first. "You must have healed quickly!")
+
+The player is shown around the human encampment (which could also act as a tutorial).
+
+Currently undetermined is how the player's ability to adapt gets discovered.
+
 ## Surprises
 
-Spoiler alert. :P
+*Spoiler alert. :P*
 
 ### Monsters are NPCs
 The first key surprise to the game will be the player's discovery that "monsters" are actually
@@ -38,6 +50,10 @@ experience. The player can either continue with the mission they were initially 
 peace with the monsters, embracing the notion that humanity is more about avoiding violence than
 having a specific genetic makeup.
 
+I believe the original idea was depending on the player's leaning on this question, they can
+either continue trying to genetically cleanse the earth, or instead spread the radiation in the
+belief that the destruction of "purity" as a concept might bring about peace.
+
 There's a lot of room to support this question. After all, if the "pure" humans are the ones that
 nuked the world into such a state, how human could they really be?
 
@@ -50,4 +66,10 @@ explained by the game's core mechanic - the player's ability to adapt in realtim
 leveraged to make the player appear human to begin with, regardless of what the player's initial
 state truly was.
 
-### Monsters are NPCs
+### The nuclear event
+I don't have a story for this presently. If I don't come up with one the game still works since 
+it isn't at all difficult to imagine how mankind would have nuked the world, but I want to note 
+that this can be an opportunity for a mystery the player might uncover if I so choose.
+
+I do think either way that there should be scraps of books or something similar to sort of clue
+the player in on what happened.
