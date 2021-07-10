@@ -4,8 +4,6 @@
 
 Description to come eventually ¯\\\_(ツ)\_/¯
 
-*It has been **8** days since a typo broke everything. 5 of those days I was on vacation.* 
-
 ### Contents
 
 * [Development Diary](#development-diary)
