@@ -4,6 +4,8 @@
 
 Description to come eventually ¯\\\_(ツ)\_/¯
 
+**All concept, writing, art, etc. is copyright.**
+
 ### Contents
 
 * [Development Diary](#development-diary)
@@ -156,5 +158,3 @@ changes. This will become much larger later on.
     ..............................#####..................#######....................
     ................................................................................
     ................................................................................
-
-**All concept, writing, art, etc. is copyright.**
