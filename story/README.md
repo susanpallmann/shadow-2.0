@@ -37,8 +37,15 @@ at minimum a trade/equipment opportunity. Most likely also some form of healing 
 
 *Need to think through how the player is tasked with their mission.*
 
-When the player leaves the settlement
-  
+When the player leaves the settlement, the player sees a large radiation warning, and is 
+introduced to settlement entry for the first time, either seeing a guard at the gate, or
+some kind of camera that examines the player. At this point it should be clear that humans
+will only let in "genetically clean" humans. The player is also at this point introduced to
+the game world, which should be in stark contrast to the sterile environment they just emerged
+from. Plant life should be everywhere, the world should feel very much alive, and this 
+appearance should be validated when the player begins to venture into the world and sees the
+world respond to its movements.
+
 
 
 ## Surprises
@@ -83,5 +90,10 @@ I do think either way that there should be scraps of books or something similar 
 the player in on what happened.
 
 ## Current inconsistencies
+
 * I think my original idea was to have the player have come from space, which is why they're
-drawn in an astronaut suit.
+drawn in an astronaut suit. However, this would suggest firmly that the player is human, which
+we are trying to avoid. Perhaps the player is given the suit in an attempt to minimize the 
+radiation experienced. In fact, if the encampments came from space it would actually make more
+sense why they're genetically "clean." And then they would have a bunch of astronaut suits
+laying around. Anyway, need to make a decision here.
