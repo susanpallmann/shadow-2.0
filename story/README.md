@@ -64,7 +64,7 @@ the first time to solve some minor roadblock. This can be something simple like 
 legs to jump over a boulder. We don't want to overwhelm the player yet, as the mechanic of 
 absorbing abilites and letting them cool down is going to be a little complex as it is.
 
-
+Writing down a random idea: maybe player holds down a key to absorb abilities?
 
 
 ## Surprises
